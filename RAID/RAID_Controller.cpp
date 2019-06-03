@@ -136,9 +136,6 @@ Compressor::Codified_File* RAID_Controller::imageDecomposer(string dir)
 
 void RAID_Controller::compose(Compressor::Decodified_File *DecFile)
 {
-    char* buffer = new char[DecFile->getDigits().size()];
-    std::ofstream outfile (DecFile->getName()+"_New.txt",std::ofstream::binary);
-    outfile.write (buffer,DecFile->getDigits().size());
-    delete[] buffer;
-    outfile.close();
+    ofstream outfile(DecFile->getName()+"_New."+DecFile->getExt(), ios::out | ios::binary);
+    outfile.write(&DecFile->getDigits()[0], DecFile->getDigits().size());
 }
