@@ -11,9 +11,9 @@ int main()
     auto comp= new Compressor();
 
     auto *r= new RAID_Controller();
-    Compressor::Codified_File* c=r->imageDecomposer("Prueba.jpeg");
+    Compressor::Codified_File* c=r->imageDecomposer("Prueba.jpg");
     Compressor::Decodified_File* dec=comp->decompress(c);
     r->compose(dec);
-    /*vector<char> data={'l','a',' ','m','e','t','a','d','a','t','a',' ','e','s',' ','l','a',' ','d','a','t','a',' ','d','e',' ','l','a',' ','d','a','t','a'};
+    /*vector<char> data={'c','a','r','d','a','m','o','m','o'};
     comp->compress(data,".GIF","temp");*/
 }

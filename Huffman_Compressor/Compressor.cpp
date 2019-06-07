@@ -15,14 +15,16 @@ Compressor::Compressor()
 
 Compressor::Codified_File* Compressor::compress(vector<char> digits,string ext,string name)
 {
+    cout<<"Comprimiendo..."<<endl;
     vector<Huffman_Node::Character> output;
     vector<char> found;
-    for (int i = 0; i < digits.size(); i++)
+    int ind=digits.size();
+    for (int i = 0; i < ind; i++)
     {
         auto it = std::find(found.begin(), found.end(), digits.at(i));
         if (it == found.end()) {
             int cont = 0;
-            for (int j = 0; j < digits.size(); j++)
+            for (int j = i; j <(ind-i); j++)
             {
                 if (digits.at(j) == digits.at(i))
                 {
@@ -35,8 +37,13 @@ Compressor::Codified_File* Compressor::compress(vector<char> digits,string ext,s
             output.push_back(d);
             found.push_back(digits.at(i));
         }
+        if(found.size()>=256)
+        {
+            break;
+        }
     }
     List<Huffman_Node*>*HuffList= VecToList(output);
+
     while(HuffList->getLength()>=2)
     {
         HuffList=sort(HuffList);
@@ -53,10 +60,10 @@ Compressor::Codified_File* Compressor::compress(vector<char> digits,string ext,s
     Huffman_Tree HuffTree= Huffman_Tree();
     HuffTree.setTop(HuffList->getHead()->getValue());
     vector<Code> codified=codifier(HuffTree,output);
-    print(codified,digits);
+    //print(codified,digits);
     string codigote=encoder(codified,digits);
-    cout<<"Codigote: "<<codigote<<endl;
-    Codified_File* out= new Codified_File(codigote,HuffTree,ext,name);
+    //cout<<"Codigote: "<<codigote<<endl;
+    Codified_File* out= new Codified_File(codigote,HuffTree,ext,name,codified);
     return out;
 }
 
@@ -121,40 +128,36 @@ void Compressor::print(List<Huffman_Node *> list)
 
 vector<Compressor::Code> Compressor::codifier(Huffman_Tree tree,vector<Huffman_Node::Character> keys)
 {
-    vector<Code> codes;
-    for(int i=0;i<keys.size();i++)
-    {
-        string cd=backTrackCoder(*keys.at(i).getDigit(),tree.getTop(),"");
-        Code c= Code(keys.at(i),cd);
-        codes.push_back(c);
-    }
-    return codes;
+    Codifier_Node *codifier= new Codifier_Node(keys.size(),"1");
+    Codifier_Node* cd=backTrackCoder(codifier,tree.getTop(), nullptr,"");
+vector<Code> v=cd->getCodes();
+    return cd->getCodes();
 
 }
 
-string Compressor::backTrackCoder(char key, Huffman_Node* temp,string code)
+Compressor::Codifier_Node* Compressor::backTrackCoder(Codifier_Node* cod, Huffman_Node* temp,Huffman_Node* alttemp,string code)
 {
-
-    if(temp->getValue()->getDigit()!= nullptr)
+    if(cod->isDone())
     {
-        if(*temp->getValue()->getDigit()==key)
-        {
-            return code;
-        }
-        else
-        {
-            return "-1";
-        }
+        return cod;
+    }
+    else if(temp->getValue()->getDigit()!= nullptr)
+    {
+            cod->add(code,*temp->getValue());
+            cod->setDir("-1");
+            return cod;
     }
     else
     {
-        string ret=backTrackCoder(key,temp->getRight(),code+"1");
-        if(ret=="-1")
+        Codifier_Node* ret=backTrackCoder(cod,temp->getRight(),temp,code+"1");
+        if(ret->getDir()=="-1")
         {
-            string retleft=backTrackCoder(key,temp->getLeft(),code+"0");
-            if(retleft=="-1")
+            cod->setDir("0");
+            Codifier_Node* retleft=backTrackCoder(cod,temp->getLeft(),temp,code+"0");
+            if(retleft->getDir()=="-1")
             {
-                return "-1";
+                retleft->setDir("-1");
+                return retleft;
             }
             else
             {
@@ -167,38 +170,46 @@ string Compressor::backTrackCoder(char key, Huffman_Node* temp,string code)
         }
     }
 }
-
 void Compressor::print(vector<Compressor::Code> codes, vector<char> digits)
 {
-    string word="";
-    for(int i=0;i<digits.size();i++)
-    {
-        string s;
-        s.push_back(digits.at(i));
-        word+=s;
-    }
-    cout<<"Palabra: "<<word<<"\n"<<endl;
-    for(int j=0;j<codes.size();j++)
+    /*for(int j=0;j<codes.size();j++)
     {
         cout<<codes.at(j).getCharacter()<<" : "<<codes.at(j).getCoded()<<"\n"<<endl;
     }
-
+*/
 }
 
 string Compressor::encoder(vector<Compressor::Code> codes, vector<char>keys)
 {
     string out="";
     int size=keys.size();
+    int csize=codes.size();
     int cont=0;
     int its=0;
-    for(int i=0;i<keys.size();i++)
+    vector<Code>found;
+    for(int i=0;i<size;i++)
     {
-        for(int j=0;j<codes.size();j++)
+        bool inFound=false;
+        int in= found.size();
+        for(int k=0;k<in;k++)
         {
-            if(codes.at(j).getCharacter()==keys.at(i))
+            if(keys.at(i)==found.at(k).getCharacter())
             {
-                out+=codes.at(j).getCoded();
+                out+=found.at(k).getCoded();
                 cont++;
+                inFound=true;
+            }
+        }
+        if(!inFound)
+        {
+            for(int j=0;j<csize;j++)
+            {
+                if(codes.at(j).getCharacter()==keys.at(i))
+                {
+                    out+=codes.at(j).getCoded();
+                    found.push_back(codes.at(j));
+                    cont++;
+                }
             }
         }
         its++;
@@ -210,11 +221,14 @@ string Compressor::encoder(vector<Compressor::Code> codes, vector<char>keys)
 
 Compressor::Decodified_File* Compressor::decompress(Compressor::Codified_File* code)
 {
+    cout<<"Descomprimiendo..."<<endl;
     vector<char> out;
+    string var= code->getCodigote();
+    int ind= code->getCodigote().size();
     int i=0;
-    while(i<(code->getCodigote().size()))
+    while(i<ind)
     {
-        char act=code->getCodigote().at(i);
+        char act=var.at(i);
         Huffman_Node* temp=code->getTree().getTop();
         while(temp->getValue()->getDigit()==nullptr)
         {
@@ -226,12 +240,13 @@ Compressor::Decodified_File* Compressor::decompress(Compressor::Codified_File* c
             {
                 temp=temp->getLeft();
             }
-            if((i+1)==code->getCodigote().size())
+            if((i+1)==ind)
             {
                 i++;
                 break;
             }
-            act=code->getCodigote().at(++i);
+            act=var.at(++i);
+            /*cout<<i<<endl;*/
         }
         out.push_back(*temp->getValue()->getDigit());
     }
@@ -240,4 +255,5 @@ Compressor::Decodified_File* Compressor::decompress(Compressor::Codified_File* c
     Decodified_File* dec= new Decodified_File(out,code->getExt(),code->getName());
     return dec;
 }
+
 

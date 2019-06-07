@@ -140,7 +140,6 @@ public:
         this->head=temp->getNext();
         temp->purge();
         delete(temp);
-        cout<<"\n"<<endl;
         *this->length=*this->length-1;
         arrange();
     }
