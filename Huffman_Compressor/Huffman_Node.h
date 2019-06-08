@@ -20,6 +20,11 @@ public:
             this->times=0;
             this->digit= new char();
         }
+        Character(int tim,char* dig)
+        {
+            this->times=tim;
+            this->digit=dig;
+        }
         int getTimes()
         {
             return this->times;

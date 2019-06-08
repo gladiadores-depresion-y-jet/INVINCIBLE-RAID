@@ -4,6 +4,7 @@
 
 #include <algorithm>
 #include <iostream>
+#include <fstream>
 #include "Compressor.h"
 #include "../Structures/List.h"
 #include "Huffman_Tree.h"
@@ -228,10 +229,15 @@ Compressor::Decodified_File* Compressor::decompress(Compressor::Codified_File* c
     int i=0;
     while(i<ind)
     {
+
         char act=var.at(i);
         Huffman_Node* temp=code->getTree().getTop();
         while(temp->getValue()->getDigit()==nullptr)
         {
+            if(i==533)
+            {
+                int p=0;
+            }
             if(act=='1')
             {
                 temp=temp->getRight();
@@ -254,6 +260,173 @@ Compressor::Decodified_File* Compressor::decompress(Compressor::Codified_File* c
     cout<<"Tamano del archivo descomprimido: "<<out.size()<<" Bytes"<<endl;
     Decodified_File* dec= new Decodified_File(out,code->getExt(),code->getName());
     return dec;
+}
+
+Compressor::Codified_File* Compressor::treeReconstructor(string dirTree,string dirCodigo)
+{
+    std::ifstream file(dirTree);
+    std::string str;
+    Huffman_Node::Character c= Huffman_Node::Character();
+    c.setDigit(nullptr);
+    Huffman_Node* head= new Huffman_Node(c);
+    Huffman_Node* temp=head;
+
+    getline(file,str);
+    string name=str;
+    getline(file,str);
+    string ext=str;
+    vector<Compressor::Code> codes;
+    std::getline(file, str);
+    while (true)
+    {
+        if(str=="")
+        {
+            string t=str;
+            getline(file,str);
+            if(str!="")
+            {
+                Huffman_Node::Character cha= Huffman_Node::Character();
+                cha.setDigit('\n');
+                Huffman_Node* n= new Huffman_Node(cha);
+                string code= str;
+                Huffman_Node::Character chac= Huffman_Node::Character();
+                chac.setDigit('\n');
+                Code cod= Code(chac,code);
+                codes.push_back(cod);
+
+                vector<char> digits;
+                for(int i=0;i<code.size();i++)
+                {
+                    digits.push_back(code.at(i));
+                }
+                for(int j=0;j<digits.size();j++)
+                {
+                    char t=digits.at(j);
+                    if(j+1==digits.size())
+                    {
+                        if(t=='1')
+                        {
+                            if(temp->getRight()!= nullptr)
+                            {
+                                int p=0;
+                            }
+                            temp->setRight(n);
+                        }
+                        else if(t=='0')
+                        {
+                            if(temp->getLeft()!= nullptr)
+                            {
+                                int p=0;
+                            }
+                            temp->setleft(n);
+                        }
+                        break;
+                    }
+                    else if(t=='1')
+                    {
+                        if(temp->getRight()== nullptr)
+                        {
+                            Huffman_Node::Character c= Huffman_Node::Character();
+                            c.setDigit(nullptr);
+                            Huffman_Node* hn= new Huffman_Node(c);
+                            temp->setRight(hn);
+                        }
+                        temp=temp->getRight();
+                    }
+                    else if(t=='0')
+                    {
+                        if(temp->getLeft()== nullptr)
+                        {
+                            Huffman_Node::Character c= Huffman_Node::Character();
+                            c.setDigit(nullptr);
+                            Huffman_Node* hn= new Huffman_Node(c);
+                            temp->setleft(hn);
+                        }
+                        temp=temp->getLeft();
+                    }
+                }
+            }
+            else
+            {
+                break;
+            }
+        }
+        else
+        {
+            Huffman_Node::Character cha= Huffman_Node::Character();
+            cha.setDigit(str.at(0));
+            Huffman_Node* n= new Huffman_Node(cha);
+            string code= str.substr(1,str.size());
+            Huffman_Node::Character chac= Huffman_Node::Character();
+            chac.setDigit(str.at(0));
+            Code cod= Code(chac,code);
+            codes.push_back(cod);
+
+            vector<char> digits;
+            for(int i=0;i<code.size();i++)
+            {
+                digits.push_back(code.at(i));
+            }
+            for(int j=0;j<digits.size();j++)
+            {
+                char t=digits.at(j);
+                if(j+1==digits.size())
+                {
+                    if(t=='1')
+                    {
+                        if(temp->getRight()!= nullptr)
+                        {
+                            int p=0;
+                        }
+                        temp->setRight(n);
+                    }
+                    else if(t=='0')
+                    {
+                        if(temp->getLeft()!= nullptr)
+                        {
+                            int p=0;
+                        }
+                        temp->setleft(n);
+                    }
+                    break;
+                }
+                else if(t=='1')
+                {
+                    if(temp->getRight()== nullptr)
+                    {
+                        Huffman_Node::Character c= Huffman_Node::Character();
+                        c.setDigit(nullptr);
+                        Huffman_Node* hn= new Huffman_Node(c);
+                        temp->setRight(hn);
+                    }
+                    temp=temp->getRight();
+                }
+                else if(t=='0')
+                {
+                    if(temp->getLeft()== nullptr)
+                    {
+                        Huffman_Node::Character c= Huffman_Node::Character();
+                        c.setDigit(nullptr);
+                        Huffman_Node* hn= new Huffman_Node(c);
+                        temp->setleft(hn);
+                    }
+                    temp=temp->getLeft();
+                }
+            }
+        }
+        getline(file,str);
+        temp=head;
+    }
+    Huffman_Tree* tree= new Huffman_Tree();
+    tree->setTop(head);
+
+    std::ifstream fileC(dirCodigo);
+    std::string strC;
+    std::getline(fileC, strC);
+
+
+    auto codifiedFile= new Compressor::Codified_File(strC,*tree,ext,name,codes);
+    return codifiedFile;
 }
 
 

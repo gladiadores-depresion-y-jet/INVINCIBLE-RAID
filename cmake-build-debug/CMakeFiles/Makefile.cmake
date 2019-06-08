@@ -26,6 +26,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/snap/clion/73/bin/cmake/linux/share/cmake-3.14/Modules/Compiler/GNU-C.cmake"
   "/snap/clion/73/bin/cmake/linux/share/cmake-3.14/Modules/Compiler/GNU-CXX.cmake"
   "/snap/clion/73/bin/cmake/linux/share/cmake-3.14/Modules/Compiler/GNU.cmake"
+  "/snap/clion/73/bin/cmake/linux/share/cmake-3.14/Modules/FindPackageHandleStandardArgs.cmake"
+  "/snap/clion/73/bin/cmake/linux/share/cmake-3.14/Modules/FindPackageMessage.cmake"
   "/snap/clion/73/bin/cmake/linux/share/cmake-3.14/Modules/Internal/CMakeCheckCompilerFlag.cmake"
   "/snap/clion/73/bin/cmake/linux/share/cmake-3.14/Modules/Platform/Linux-GNU-C.cmake"
   "/snap/clion/73/bin/cmake/linux/share/cmake-3.14/Modules/Platform/Linux-GNU-CXX.cmake"
@@ -33,6 +35,10 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/snap/clion/73/bin/cmake/linux/share/cmake-3.14/Modules/Platform/Linux.cmake"
   "/snap/clion/73/bin/cmake/linux/share/cmake-3.14/Modules/Platform/UnixPaths.cmake"
   "/snap/clion/73/bin/cmake/linux/share/cmake-3.14/Modules/ProcessorCount.cmake"
+  "/usr/share/OpenCV/OpenCVConfig-version.cmake"
+  "/usr/share/OpenCV/OpenCVConfig.cmake"
+  "/usr/share/OpenCV/OpenCVModules-release.cmake"
+  "/usr/share/OpenCV/OpenCVModules.cmake"
   )
 
 # The corresponding makefile is:

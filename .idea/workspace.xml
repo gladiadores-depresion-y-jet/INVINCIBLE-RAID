@@ -5,32 +5,48 @@
       <config projectName="RAID_5" targetName="RAID_5" />
     </generated>
   </component>
-  <component name="CMakeSettings">
+  <component name="CMakeSettings" AUTO_RELOAD="true">
     <configurations>
       <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
     </configurations>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce78ecc8-1404-4b3d-8145-787670d947d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/CMakeCache.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/opencv-4.1.0 (1).zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Huffman_Compressor/Compressor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Huffman_Compressor/Compressor.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Huffman_Compressor/Compressor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Huffman_Compressor/Compressor.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Huffman_Compressor/Huffman_Node.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Huffman_Compressor/Huffman_Node.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Huffman_Compressor/Huffman_Node.h" beforeDir="false" afterPath="$PROJECT_DIR$/Huffman_Compressor/Huffman_Node.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Main/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Structures/List.h" beforeDir="false" afterPath="$PROJECT_DIR$/Structures/List.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RAID/RAID_Controller.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/RAID/RAID_Controller.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RAID/RAID_Controller.h" beforeDir="false" afterPath="$PROJECT_DIR$/RAID/RAID_Controller.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/DependInfo.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/Huffman_Compressor/Compressor.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/Huffman_Compressor/Compressor.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/Huffman_Compressor/Huffman_Node.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/Huffman_Compressor/Huffman_Node.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/Huffman_Compressor/Huffman_Tree.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/Huffman_Compressor/Huffman_Tree.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/Main/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/Main/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/Main/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/RAID/Disk.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/RAID/Disk.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/RAID/FilePart.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/RAID/FilePart.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/RAID/RAID_Controller.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/RAID/RAID_Controller.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Prueba.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Prueba.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/Structures/Matrix.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/Structures/Matrix.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Crotolamo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Prueba5.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Crotolamo_New.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Prueba2_New.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Prueba_New.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Prueba3_New.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Prueba_New.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/RAID_5" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/RAID_5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RAID_5.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/RAID_5.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/download (1).jpeg" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,14 +58,55 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="FavoritesManager">
+    <favorites_list name="RAID_5" />
+  </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Main/main.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="85" selection-start-line="16" selection-start-column="85" selection-end-line="16" selection-end-column="85" />
+              <folding>
+                <element signature="e#0#24#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RAID/RAID_Controller.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="191">
+              <caret line="135" selection-start-line="135" selection-end-line="135" />
+              <folding>
+                <element signature="e#48#66#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RAID/RAID_Controller.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="343">
-              <caret line="32" column="43" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="43" />
+              <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
               <folding>
                 <element signature="e#116#147#0" expanded="true" />
               </folding>
@@ -58,46 +115,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Huffman_Compressor/Huffman_Node.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="750">
-              <caret line="50" column="18" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RAID/RAID_Controller.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="132" column="47" selection-start-line="132" selection-start-column="47" selection-end-line="132" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Huffman_Compressor/Huffman_Node.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="43" selection-start-line="43" selection-end-line="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Huffman_Compressor/Compressor.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="78" column="54" selection-start-line="78" selection-start-column="54" selection-end-line="78" selection-end-column="54" />
+            <state relative-caret-position="86">
+              <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Huffman_Compressor/Compressor.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2685">
-              <caret line="218" selection-start-line="218" selection-end-line="218" />
+            <state relative-caret-position="74">
+              <caret line="238" selection-start-line="238" selection-end-line="238" />
               <folding>
                 <element signature="e#48#68#0" expanded="true" />
               </folding>
@@ -106,22 +136,37 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Structures/List.h">
+        <entry file="file:///usr/include/c++/7/bits/stl_vector.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="141" column="21" selection-start-line="141" selection-start-column="21" selection-end-line="141" selection-end-column="21" />
-              <folding>
-                <element signature="e#92#109#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="76">
+              <caret line="824" selection-start-line="824" selection-end-line="824" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Main/main.cpp">
+        <entry file="file://$PROJECT_DIR$/Huffman_Compressor/Huffman_Node.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+            <state relative-caret-position="73">
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Huffman_Compressor/Huffman_Node.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Huffman_Compressor/Huffman_Tree.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
@@ -174,23 +219,26 @@
         <option value="$PROJECT_DIR$/Huffman_Compressor/Huffman_Tree.cpp" />
         <option value="$PROJECT_DIR$/Huffman_Compressor/HUffman_Node.h" />
         <option value="$PROJECT_DIR$/Structures/Node.h" />
-        <option value="$PROJECT_DIR$/RAID/RAID_Controller.h" />
-        <option value="$PROJECT_DIR$/RAID/RAID_Controller.cpp" />
         <option value="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" />
         <option value="$PROJECT_DIR$/Huffman_Compressor/Huffman_Node.cpp" />
+        <option value="$PROJECT_DIR$/Structures/List.h" />
+        <option value="$USER_HOME$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/RAID/RAID_Controller.h" />
         <option value="$PROJECT_DIR$/Huffman_Compressor/Huffman_Node.h" />
         <option value="$PROJECT_DIR$/Huffman_Compressor/Compressor.h" />
-        <option value="$PROJECT_DIR$/Structures/List.h" />
-        <option value="$PROJECT_DIR$/Main/main.cpp" />
+        <option value="$PROJECT_DIR$/RAID/RAID_Controller.cpp" />
         <option value="$PROJECT_DIR$/Huffman_Compressor/Compressor.cpp" />
+        <option value="$PROJECT_DIR$/Main/main.cpp" />
       </list>
     </option>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="683" />
     <option name="y" value="27" />
-    <option name="width" value="1920" />
-    <option name="height" value="1053" />
+    <option name="width" value="683" />
+    <option name="height" value="741" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -198,6 +246,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -234,13 +283,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -295,59 +343,72 @@
       <workItem from="1559670744022" duration="663000" />
       <workItem from="1559671429588" duration="15209000" />
       <workItem from="1559700757998" duration="14665000" />
+      <workItem from="1559875842050" duration="4009000" />
+      <workItem from="1559948079141" duration="6340000" />
+      <workItem from="1559962165903" duration="22948000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104577000" />
+    <option name="totallyTimeSpent" value="137874000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
+    <frame x="0" y="27" width="1366" height="741" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.3633938" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49609375" weight="0.19015151" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.91239667" />
+      <window_info id="Favorites" order="2" sideWeight="0.50390625" side_tool="true" weight="0.7643939" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.56033057" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.3293348" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.57685953" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.6958678" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.5983471" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.54710746" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="TODO" order="7" weight="0.3289256" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3289256" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" />
-      <window_info anchor="bottom" id="CMake" order="12" weight="0.049586777" />
+      <window_info anchor="bottom" id="CMake" order="12" weight="0.32561985" />
       <window_info anchor="bottom" id="Inspection Results" order="13" weight="0.3293348" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Database" order="3" weight="0.022727273" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.3633938" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49609375" visible="true" weight="0.19015151" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.91239667" />
+      <window_info id="Favorites" order="2" sideWeight="0.50390625" side_tool="true" weight="0.7643939" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.56033057" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.3293348" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.4429752" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.27272728" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.5983471" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.54710746" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="TODO" order="7" weight="0.3289256" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3289256" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" />
-      <window_info anchor="bottom" id="CMake" order="12" weight="0.049586777" />
+      <window_info anchor="bottom" id="CMake" order="12" weight="0.32561985" />
       <window_info anchor="bottom" id="Inspection Results" order="13" weight="0.3293348" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Database" order="3" weight="0.022727273" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,45 +418,39 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Main/main.cpp</url>
-          <line>14</line>
-          <option name="timeStamp" value="112" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Main/main.cpp</url>
-          <line>13</line>
-          <option name="timeStamp" value="113" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Huffman_Compressor/Compressor.cpp</url>
+          <line>238</line>
+          <option name="timeStamp" value="136" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Main/main.cpp</url>
           <line>18</line>
-          <option name="timeStamp" value="114" />
+          <option name="timeStamp" value="144" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Huffman_Compressor/Compressor.cpp</url>
-          <line>41</line>
-          <option name="timeStamp" value="115" />
+          <line>386</line>
+          <option name="timeStamp" value="147" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Huffman_Compressor/Compressor.cpp</url>
-          <line>59</line>
-          <option name="timeStamp" value="118" />
+          <line>378</line>
+          <option name="timeStamp" value="149" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Huffman_Compressor/Compressor.cpp</url>
-          <line>130</line>
-          <option name="timeStamp" value="119" />
+          <line>318</line>
+          <option name="timeStamp" value="151" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Huffman_Compressor/Compressor.cpp</url>
-          <line>216</line>
-          <option name="timeStamp" value="120" />
+          <line>310</line>
+          <option name="timeStamp" value="153" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Structures/List.cpp" />
     <entry file="file://$PROJECT_DIR$/Structures/Node.cpp" />
     <entry file="file://$PROJECT_DIR$/Structures/Matrix.cpp">
       <provider selected="true" editor-type-id="text-editor" />
@@ -557,94 +612,132 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Huffman_Compressor/Huffman_Tree.cpp">
+    <entry file="file:///usr/include/opencv2/opencv.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
+        <state relative-caret-position="180">
+          <caret line="100" selection-start-line="100" selection-end-line="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/opencv2/core/cvstd.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="621" selection-start-line="621" selection-end-line="621" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
           <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Huffman_Compressor/Huffman_Node.h">
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="50" column="18" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
+        <state relative-caret-position="375">
+          <caret line="25" selection-start-line="24" selection-end-line="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/include/c++/7/ext/new_allocator.h">
+    <entry file="file:///usr/include/opencv2/core/mat.inl.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1515">
-          <caret line="101" selection-start-line="101" selection-end-line="101" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Huffman_Compressor/Huffman_Node.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Huffman_Compressor/Compressor.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="78" column="54" selection-start-line="78" selection-start-column="54" selection-end-line="78" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RAID/RAID_Controller.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="132" column="47" selection-start-line="132" selection-start-column="47" selection-end-line="132" selection-end-column="47" />
+        <state relative-caret-position="15">
+          <caret line="729" selection-start-line="729" selection-end-line="729" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Structures/List.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="141" column="21" selection-start-line="141" selection-start-column="21" selection-end-line="141" selection-end-column="21" />
+        <state relative-caret-position="90">
+          <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="17" />
           <folding>
             <element signature="e#92#109#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Huffman_Compressor/Huffman_Tree.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/RAID/RAID_Controller.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="343">
-          <caret line="32" column="43" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="43" />
+          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
           <folding>
             <element signature="e#116#147#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/include/c++/7/bits/stl_vector.h">
+    <entry file="file:///usr/include/c++/7/ext/new_allocator.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="325" selection-start-line="325" selection-end-line="325" />
+        <state relative-caret-position="64">
+          <caret line="110" selection-start-line="110" selection-end-line="110" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main/main.cpp">
+    <entry file="file://$PROJECT_DIR$/RAID/RAID_Controller.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+        <state relative-caret-position="191">
+          <caret line="135" selection-start-line="135" selection-end-line="135" />
+          <folding>
+            <element signature="e#48#66#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Huffman_Compressor/Huffman_Node.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/7/bits/stl_vector.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="824" selection-start-line="824" selection-end-line="824" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Huffman_Compressor/Huffman_Node.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Huffman_Compressor/Compressor.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Huffman_Compressor/Compressor.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2685">
-          <caret line="218" selection-start-line="218" selection-end-line="218" />
+        <state relative-caret-position="74">
+          <caret line="238" selection-start-line="238" selection-end-line="238" />
           <folding>
             <element signature="e#48#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="85" selection-start-line="16" selection-start-column="85" selection-end-line="16" selection-end-column="85" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
           </folding>
         </state>
       </provider>

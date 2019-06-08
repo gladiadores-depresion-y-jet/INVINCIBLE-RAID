@@ -169,6 +169,7 @@ class Compressor
         Codifier_Node* backTrackCoder(Codifier_Node* cod, Huffman_Node* temp,Huffman_Node* alttemp ,string code);
         void print(vector<Code>,vector<char> word);
         string encoder(vector<Code> codes, vector<char> keys);
+        Codified_File* treeReconstructor(string dirTree, string dirCodigo);
 };
 
 

@@ -3,6 +3,7 @@
 //
 
 #include <fstream>
+#include <iostream>
 #include "RAID_Controller.h"
 
 RAID_Controller::RAID_Controller()
@@ -106,7 +107,8 @@ bool RAID_Controller::dirCreator(const char* dir)
 
 Disk *RAID_Controller::diskGetter(int diskN)
 {
-    Node<Disk*>* temp=this->diskList->getHead();
+    auto temp=this->diskList->getHead();
+
     while(temp!= nullptr)
     {
         if(temp->getValue()->getDiskN()==diskN)
@@ -131,6 +133,7 @@ Compressor::Codified_File* RAID_Controller::imageDecomposer(string dir)
     std::vector<char> data(buffer, buffer+int(pos));
 
     Compressor::Codified_File* code=comp->compress(data,input.at(1),input.at(0));
+    diskWriter(code);
     return code;
 }
 
@@ -138,4 +141,55 @@ void RAID_Controller::compose(Compressor::Decodified_File *DecFile)
 {
     ofstream outfile(DecFile->getName()+"_New."+DecFile->getExt(), ios::out | ios::binary);
     outfile.write(&DecFile->getDigits()[0], DecFile->getDigits().size());
+}
+
+void RAID_Controller::imageSplitter(string dir, string name)
+{
+    Mat image =imread(dir);
+    for(int i=0;i<3;i++)
+    {
+        Rect crop;
+        if(i==0)
+        {
+            crop= Rect(0,0,image.cols/3,image.rows);
+        }
+        else if (i==1)
+        {
+            crop= Rect(image.cols/3,0,image.cols/3,image.rows);
+        }
+        else if(i==2)
+        {
+            crop= Rect(2*image.cols/3,0,image.cols/3,image.rows);
+        }
+        Mat cropped=image(crop);
+        imwrite("Crap_"+to_string(i)+".jpg",cropped);
+    }
+
+}
+
+void RAID_Controller::diskWriter(Compressor::Codified_File* coded)
+{
+    ofstream outfile(coded->getName()+"_Codigote.txt", ios::out | ios::binary);
+    ofstream out;
+    out.open(coded->getName()+"_Codigote.txt");
+
+    out<<coded->getCodigote()<<endl;
+
+    out.close();
+    imageSplitter(coded->getName()+"."+coded->getExt(),"");
+
+    ofstream outtree(coded->getName()+"_Tree.txt",ios::out|ios::binary);
+    ofstream outT;
+    outT.open(coded->getName()+"_Tree.txt");
+
+    int ind=coded->getCodes().size();
+    outT<<coded->getName()<<endl;
+    outT<<coded->getExt()<<endl;
+    for(int i=0;i<ind;i++)
+    {
+        string s;
+        s=coded->getCodes().at(i).getCharacter();
+        outT<<s+coded->getCodes().at(i).getCoded()<<endl;
+    }
+    outT.close();
 }
