@@ -401,4 +401,18 @@ Compressor::Codified_File* Compressor:: treeReconstructor(string dirTree,string 
     return codifiedFile;
 }
 
+void Compressor::writeToDiskComp(Compressor::Codified_File *file)
+{
+    ofstream outfile(file->getName()+"_Codigote."+file->getExt(), ios::out | ios::binary);
+    ofstream out;
+    out.open(file->getName()+"_Codigote."+file->getExt());
+    out<<file->getCodigote()<<endl;
+}
+
+void Compressor::writeToDiskDecomp(Compressor::Decodified_File *DecFile)
+{
+    ofstream outfile(DecFile->getName()+"_New."+DecFile->getExt(), ios::out | ios::binary);
+    outfile.write(&DecFile->getDigits()[0], DecFile->getDigits().size());
+}
+
 

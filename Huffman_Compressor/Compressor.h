@@ -154,6 +154,8 @@ class Compressor
         void print(vector<Code>,vector<char> word);
         string encoder(map<char,string> codes, vector<char> keys);
         Codified_File* treeReconstructor(string dirTree, string dirCodigo);
+        void writeToDiskComp(Codified_File* file);
+        void writeToDiskDecomp(Decodified_File* dec);
 };
 
 

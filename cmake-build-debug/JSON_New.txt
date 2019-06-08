@@ -1,0 +1,4 @@
+{
+    "Image0": "{\n    \"name\": \"danielImage\",\n    \"author\": \"SOFIA\",\n    \"description\": \"this shit\",\n    \"year\": \"2018\",\n    \"size\": \"2000\"\n}\n",
+    "Image1": "{\n    \"name\": \"gabriel\",\n    \"author\": \"GARZA\",\n    \"description\": \"this is a description\",\n    \"year\": \"2019\",\n    \"size\": \"2000\"\n}\n"
+}
