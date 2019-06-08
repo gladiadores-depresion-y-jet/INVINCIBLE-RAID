@@ -14,6 +14,7 @@ RAID_Controller::RAID_Controller()
 void RAID_Controller::Initializer()
 {
     this->diskList=new List<Disk*>();
+    this->c_disk=1;
     this->comp= new Compressor();
     DIR *rDir=opendir("RAID");
     if(rDir== nullptr)
@@ -123,17 +124,15 @@ Compressor::Codified_File* RAID_Controller::imageDecomposer(string dir)
 {
     vector<string> input;
     boost::split(input,dir, boost::is_any_of("."));
-
     ifstream ifs(dir, ios::binary|ios::ate);
     ifstream::pos_type pos = ifs.tellg();
     char* buffer = new char[pos];
     ifs.seekg(0, ios::beg);
     ifs.read(buffer, pos);
-
     std::vector<char> data(buffer, buffer+int(pos));
-
     Compressor::Codified_File* code=comp->compress(data,input.at(1),input.at(0));
-    diskWriter(code);
+    vector<Frag> f= parityCalculator(codigoteSplitter(code->getCodigote()));
+    diskWriter(code,f);
     return code;
 }
 
@@ -167,21 +166,35 @@ void RAID_Controller::imageSplitter(string dir, string name)
 
 }
 
-void RAID_Controller::diskWriter(Compressor::Codified_File* coded)
+void RAID_Controller::diskWriter(Compressor::Codified_File* coded,vector<Frag> parity)
 {
-    ofstream outfile(coded->getName()+"_Codigote.txt", ios::out | ios::binary);
-    ofstream out;
-    out.open(coded->getName()+"_Codigote.txt");
-
-    out<<coded->getCodigote()<<endl;
-
-    out.close();
-    imageSplitter(coded->getName()+"."+coded->getExt(),"");
-
-    ofstream outtree(coded->getName()+"_Tree.txt",ios::out|ios::binary);
+    for(int i=0;i<4;i++)
+    {
+        if(i+1==4)
+        {
+            ofstream outtree("RAID/Disk_"+to_string(c_disk)+"/"+coded->getName()+"_Parity.txt",ios::out|ios::binary);
+            ofstream outT;
+            outT.open("RAID/Disk_"+to_string(c_disk)+"/"+coded->getName()+"_Parity.txt",ios::out|ios::binary);
+            outT<<"Size:"+to_string(parity.at(i).getRealSize())<<endl;
+            outT<<parity.at(i).getFragment()<<endl;
+        }
+        else
+        {
+            ofstream outtree("RAID/Disk_"+to_string(c_disk)+"/"+coded->getName()+"_Part_"+to_string(i+1)+".txt",ios::out|ios::binary);
+            ofstream outT;
+            outT.open("RAID/Disk_"+to_string(c_disk)+"/"+coded->getName()+"_Part_"+to_string(i+1)+".txt",ios::out|ios::binary);
+            outT<<"Size:"+to_string(parity.at(i).getRealSize())<<endl;
+            outT<<parity.at(i).getFragment()<<endl;
+        }
+        c_disk++;
+        if(c_disk>4)
+        {
+            c_disk=1;
+        }
+    }
+    ofstream outtree("../Trees/"+coded->getName()+"_Tree.txt",ios::out|ios::binary);
     ofstream outT;
-    outT.open(coded->getName()+"_Tree.txt");
-
+    outT.open("../Trees/"+coded->getName()+"_Tree.txt");
     int ind=coded->getCodes().size();
     outT<<coded->getName()<<endl;
     outT<<coded->getExt()<<endl;
@@ -197,4 +210,90 @@ void RAID_Controller::diskWriter(Compressor::Codified_File* coded)
         it++;
     }
     outT.close();
+}
+
+vector<string> RAID_Controller::codigoteSplitter(string codigote)
+{
+    int size= codigote.size();
+    int p_size=size/3;
+    int extras=size%3;
+    int current=0;
+    vector<string> codes;
+    for(int i=0;i<3;i++)
+    {
+        string out="";
+        if(extras>0)
+        {
+            int cplus=current;
+            for(int j=current;j<p_size+1+cplus;j++)
+            {
+                out+=codigote.at(j);
+                current++;
+            }
+            extras--;
+        }
+        else
+        {
+            int cplus=current;
+            for(int j=current;j<p_size+cplus;j++)
+            {
+                out+=codigote.at(j);
+                current++;
+            }
+        }
+        codes.push_back(out);
+    }
+    for(int i=0;i<codes.size();i++)
+    {
+        cout<<codes.at(i)<<endl;
+    }
+    return codes;
+}
+
+vector<RAID_Controller::Frag> RAID_Controller::parityCalculator(vector<string> codes)
+{
+    vector<Frag> out;
+    int max=codes.at(0).size();
+    for(int i=1;i<3;i++)
+    {
+        if(codes.at(i).size()>max)
+        {
+            max=codes.at(i).size();
+        }
+    }
+    for(int j=0;j<3;j++)
+    {
+        if(codes.at(j).size()<max)
+        {
+            Frag f= Frag(codes.at(j).size(),codes.at(j)+"0");
+            out.push_back(f);
+        }
+        else
+        {
+            Frag f= Frag(codes.at(j).size(),codes.at(j));
+            out.push_back(f);
+        }
+    }
+    string parity;
+    for(int k=0;k<max;k++)
+    {
+        vector<char> act;
+        act.push_back(out.at(0).getFragment().at(k));
+        act.push_back(out.at(1).getFragment().at(k));
+        act.push_back(out.at(2).getFragment().at(k));
+        int mycount=std::count (act.begin(), act.end(),'1');
+        if(mycount==0||mycount==2)
+        {
+            parity+="0";
+        }
+        else if(mycount==1||mycount==3)
+        {
+            parity+="1";
+        }
+    }
+    Frag f= Frag(max,parity);
+    out.push_back(f);
+
+    return out;
+
 }

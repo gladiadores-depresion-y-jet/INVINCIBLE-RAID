@@ -56,14 +56,6 @@ public:
         this->next=node;
     }
     /**
-     * Metodo para obtner el identificador del nodo.
-     * @return Identificador del nodo.
-     */
-    int getOrder()
-    {
-        return *this->order;
-    }
-    /**
      * Metodo para borrar todos los valores almacenados en el nodo.
      */
     void purge()

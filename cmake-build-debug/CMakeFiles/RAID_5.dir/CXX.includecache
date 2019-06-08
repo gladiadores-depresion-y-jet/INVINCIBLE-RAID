@@ -24,20 +24,6 @@ map
 Huffman_Node.h
 /home/dcamachog1501/Induced_Desktop/RAID_5/Huffman_Compressor/Huffman_Node.h
 
-/home/dcamachog1501/Induced_Desktop/RAID_5/Main/main.cpp
-bits/stdc++.h
--
-iostream
--
-sys/stat.h
--
-sys/types.h
--
-../RAID/RAID_Controller.h
-/home/dcamachog1501/Induced_Desktop/RAID_5/RAID/RAID_Controller.h
-../Huffman_Compressor/Compressor.h
-/home/dcamachog1501/Induced_Desktop/RAID_5/Huffman_Compressor/Compressor.h
-
 /home/dcamachog1501/Induced_Desktop/RAID_5/RAID/Disk.h
 FilePart.h
 /home/dcamachog1501/Induced_Desktop/RAID_5/RAID/FilePart.h
@@ -47,6 +33,14 @@ FilePart.h
 /home/dcamachog1501/Induced_Desktop/RAID_5/RAID/FilePart.h
 string
 -
+
+/home/dcamachog1501/Induced_Desktop/RAID_5/RAID/RAID_Controller.cpp
+fstream
+-
+iostream
+-
+RAID_Controller.h
+/home/dcamachog1501/Induced_Desktop/RAID_5/RAID/RAID_Controller.h
 
 /home/dcamachog1501/Induced_Desktop/RAID_5/RAID/RAID_Controller.h
 ../Structures/List.h

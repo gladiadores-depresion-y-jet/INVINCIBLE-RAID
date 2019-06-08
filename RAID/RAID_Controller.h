@@ -28,9 +28,31 @@ class RAID_Controller
 {
     private:
         int disks;
+        int c_disk;
         List<Disk*>* diskList;
         Compressor *comp;
     public:
+    struct Frag
+    {
+        private:
+            string fragment;
+            int real_s;
+        public:
+
+            Frag(int s,string f)
+            {
+                this->fragment=f;
+                this->real_s=s;
+            }
+            int getRealSize()
+            {
+                return this->real_s;
+            }
+            string getFragment()
+            {
+                return this->fragment;
+            }
+    };
         RAID_Controller();
         void Initializer();
         bool dirCreator(const char* dir);
@@ -38,10 +60,12 @@ class RAID_Controller
         Disk* diskGetter(int diskN);
         Compressor::Codified_File* imageDecomposer(string dir);
         void imageSplitter(string dir,string outDir);
-        void diskWriter(Compressor::Codified_File* coded);
+        void diskWriter(Compressor::Codified_File* coded,vector<Frag> parity);
+        void compose(Compressor::Decodified_File *DecFile);
+        vector<string> codigoteSplitter(string codigote);
+        vector<Frag> parityCalculator(vector<string>);
 
 
-    void compose(Compressor::Decodified_File *DecFile);
 };
 
 
