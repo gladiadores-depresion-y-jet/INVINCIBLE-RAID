@@ -60,7 +60,7 @@ Compressor::Codified_File* Compressor::compress(vector<char> digits,string ext,s
     }
     Huffman_Tree HuffTree= Huffman_Tree();
     HuffTree.setTop(HuffList->getHead()->getValue());
-    vector<Code> codified=codifier(HuffTree,output);
+    map<char,string>codified=codifier(HuffTree,output);
     //print(codified,digits);
     string codigote=encoder(codified,digits);
     //cout<<"Codigote: "<<codigote<<endl;
@@ -127,11 +127,11 @@ void Compressor::print(List<Huffman_Node *> list)
     }
 }
 
-vector<Compressor::Code> Compressor::codifier(Huffman_Tree tree,vector<Huffman_Node::Character> keys)
+map<char,string> Compressor::codifier(Huffman_Tree tree,vector<Huffman_Node::Character> keys)
 {
     Codifier_Node *codifier= new Codifier_Node(keys.size(),"1");
     Codifier_Node* cd=backTrackCoder(codifier,tree.getTop(), nullptr,"");
-vector<Code> v=cd->getCodes();
+
     return cd->getCodes();
 
 }
@@ -144,7 +144,7 @@ Compressor::Codifier_Node* Compressor::backTrackCoder(Codifier_Node* cod, Huffma
     }
     else if(temp->getValue()->getDigit()!= nullptr)
     {
-            cod->add(code,*temp->getValue());
+            cod->add(code,*temp->getValue()->getDigit());
             cod->setDir("-1");
             return cod;
     }
@@ -180,7 +180,7 @@ void Compressor::print(vector<Compressor::Code> codes, vector<char> digits)
 */
 }
 
-string Compressor::encoder(vector<Compressor::Code> codes, vector<char>keys)
+string Compressor::encoder(map<char,string> codes, vector<char>keys)
 {
     string out="";
     int size=keys.size();
@@ -190,30 +190,7 @@ string Compressor::encoder(vector<Compressor::Code> codes, vector<char>keys)
     vector<Code>found;
     for(int i=0;i<size;i++)
     {
-        bool inFound=false;
-        int in= found.size();
-        for(int k=0;k<in;k++)
-        {
-            if(keys.at(i)==found.at(k).getCharacter())
-            {
-                out+=found.at(k).getCoded();
-                cont++;
-                inFound=true;
-            }
-        }
-        if(!inFound)
-        {
-            for(int j=0;j<csize;j++)
-            {
-                if(codes.at(j).getCharacter()==keys.at(i))
-                {
-                    out+=codes.at(j).getCoded();
-                    found.push_back(codes.at(j));
-                    cont++;
-                }
-            }
-        }
-        its++;
+        out+=codes[keys.at(i)];
     }
     cout<<"Real bit size: "<<to_string(size*8)<<"\n"<<endl;
     cout<<"Compressed bit size:"<<out.size()<<endl;
@@ -262,7 +239,7 @@ Compressor::Decodified_File* Compressor::decompress(Compressor::Codified_File* c
     return dec;
 }
 
-Compressor::Codified_File* Compressor::treeReconstructor(string dirTree,string dirCodigo)
+Compressor::Codified_File* Compressor:: treeReconstructor(string dirTree,string dirCodigo)
 {
     std::ifstream file(dirTree);
     std::string str;
@@ -275,7 +252,7 @@ Compressor::Codified_File* Compressor::treeReconstructor(string dirTree,string d
     string name=str;
     getline(file,str);
     string ext=str;
-    vector<Compressor::Code> codes;
+    map<char,string> codes;
     std::getline(file, str);
     while (true)
     {
@@ -289,10 +266,7 @@ Compressor::Codified_File* Compressor::treeReconstructor(string dirTree,string d
                 cha.setDigit('\n');
                 Huffman_Node* n= new Huffman_Node(cha);
                 string code= str;
-                Huffman_Node::Character chac= Huffman_Node::Character();
-                chac.setDigit('\n');
-                Code cod= Code(chac,code);
-                codes.push_back(cod);
+                codes['\n']=code;
 
                 vector<char> digits;
                 for(int i=0;i<code.size();i++)
@@ -357,10 +331,8 @@ Compressor::Codified_File* Compressor::treeReconstructor(string dirTree,string d
             cha.setDigit(str.at(0));
             Huffman_Node* n= new Huffman_Node(cha);
             string code= str.substr(1,str.size());
-            Huffman_Node::Character chac= Huffman_Node::Character();
-            chac.setDigit(str.at(0));
-            Code cod= Code(chac,code);
-            codes.push_back(cod);
+
+            codes[str.at(0)]=code;
 
             vector<char> digits;
             for(int i=0;i<code.size();i++)

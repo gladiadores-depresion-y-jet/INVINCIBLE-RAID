@@ -185,11 +185,16 @@ void RAID_Controller::diskWriter(Compressor::Codified_File* coded)
     int ind=coded->getCodes().size();
     outT<<coded->getName()<<endl;
     outT<<coded->getExt()<<endl;
-    for(int i=0;i<ind;i++)
+    int size=coded->getCodes().size();
+    std::map<char, string>::const_iterator it = coded->getCodes().begin();
+    for(int i=0;i<size; i++)
     {
+        char key = it->first;
         string s;
-        s=coded->getCodes().at(i).getCharacter();
-        outT<<s+coded->getCodes().at(i).getCoded()<<endl;
+        s=key;
+        string value = it->second;
+        outT<<s+value<<endl;
+        it++;
     }
     outT.close();
 }

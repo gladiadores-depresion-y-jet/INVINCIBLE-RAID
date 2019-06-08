@@ -10,6 +10,7 @@
 #include "Huffman_Node.h"
 #include "../Structures/List.h"
 #include "Huffman_Tree.h"
+#include <map>
 
 using namespace std;
 class Compressor
@@ -43,17 +44,16 @@ class Compressor
                 string codigote;
                 string ext;
                 string name;
-                vector<Code> codes;
+                map<char,string> codes;
                 Huffman_Tree tree;
         public:
-            Codified_File(string c, Huffman_Tree ht,string ext,string nam,vector<Code> cod )
+            Codified_File(string c, Huffman_Tree ht,string ext,string nam,map<char,string> cod )
             {
                 this->codes=cod;
                 this->codigote=c;
                 this->tree=ht;
                 this->ext=ext;
                 this->name=nam;
-                setMin();
             }
             string getCodigote()
             {
@@ -71,22 +71,7 @@ class Compressor
             {
                 return this->name;
             }
-            void setMin()
-            {
-                this->min=codes.at(0).getCoded().size();
-                for(int i=0;i<codes.size();i++)
-                {
-                    if(codes.at(i).getCoded().size()<=this->min)
-                    {
-                        this->min=codes.at(i).getCoded().size();
-                    }
-                }
-            }
-            int getMin()
-            {
-                return this->min;
-            }
-            vector<Code> getCodes()
+            map<char,string> getCodes()
             {
                 return this->codes;
             }
@@ -123,7 +108,7 @@ class Compressor
             private:
                 int p_size;
                 string dir;
-                vector<Code> codes;
+                map<char,string> codes;
                 bool done;
             public:
                 Codifier_Node(int ps,string dir)
@@ -136,16 +121,15 @@ class Compressor
                 {
                     return this->done;
                 }
-                void add(string code,Huffman_Node::Character ch)
+                void add(string code,char ch)
                 {
-                    Code c= Code(ch,code);
-                    codes.push_back(c);
+                    codes[ch]=code;
                     if(codes.size()==p_size)
                     {
                         this->done=true;
                     }
                 }
-                vector<Code> getCodes()
+                map<char,string> getCodes()
                 {
                     return this->codes;
                 }
@@ -164,11 +148,11 @@ class Compressor
         Decodified_File* alterdecode(Codified_File* code);
         List<Huffman_Node *> * VecToList(vector<Huffman_Node::Character> vec);
         List<Huffman_Node*>* sort(List<Huffman_Node*>* list);
-        vector<Code> codifier(Huffman_Tree tree,vector<Huffman_Node::Character> keys);
+        map<char,string> codifier(Huffman_Tree tree,vector<Huffman_Node::Character> keys);
         void print(List<Huffman_Node*> list);
         Codifier_Node* backTrackCoder(Codifier_Node* cod, Huffman_Node* temp,Huffman_Node* alttemp ,string code);
         void print(vector<Code>,vector<char> word);
-        string encoder(vector<Code> codes, vector<char> keys);
+        string encoder(map<char,string> codes, vector<char> keys);
         Codified_File* treeReconstructor(string dirTree, string dirCodigo);
 };
 

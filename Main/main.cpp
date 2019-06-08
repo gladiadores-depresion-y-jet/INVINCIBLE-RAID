@@ -11,10 +11,10 @@ int main()
     auto comp= new Compressor();
 
     auto *r= new RAID_Controller();
-    Compressor::Codified_File* c=r->imageDecomposer("Prueba.jpg");
+    Compressor::Codified_File* c=r->imageDecomposer("Prueba_4.jpg");
     //Compressor::Decodified_File* dec=comp->decompress(c);
     r->diskWriter(c);
-    Compressor::Codified_File* cod =comp->treeReconstructor("Prueba_Tree.txt","Prueba_Codigote.txt");
+    Compressor::Codified_File* cod =comp->treeReconstructor("Prueba_4_Tree.txt","Prueba_4_Codigote.txt");
 
     Compressor::Decodified_File* dec=comp->decompress(cod);
     r->compose(dec);
