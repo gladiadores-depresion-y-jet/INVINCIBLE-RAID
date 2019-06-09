@@ -52,6 +52,10 @@ class RAID_Controller
             {
                 return this->fragment;
             }
+            void setFragment(string f)
+            {
+                this->fragment=f;
+            }
     };
         RAID_Controller();
         void Initializer();
@@ -64,6 +68,7 @@ class RAID_Controller
         void compose(Compressor::Decodified_File *DecFile);
         vector<string> codigoteSplitter(string codigote);
         vector<Frag> parityCalculator(vector<string>);
+        vector<Frag> fragOptimizer(vector<Frag>);
 
 
 };

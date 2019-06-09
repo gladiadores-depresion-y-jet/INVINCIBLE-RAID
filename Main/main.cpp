@@ -22,7 +22,8 @@ int main()
     }
     Compressor::Codified_File* file=comp->compress(ch,"txt","JSON");*/
 
-    Compressor::Codified_File* c=r->imageDecomposer("Prueba2.jpg");
+    Compressor::Codified_File* c=r->imageDecomposer("Prueba.jpg");
+    c=r->imageDecomposer("Prueba2.jpg");
     //Compressor::Decodified_File* dec=comp->decompress(c);
     //r->diskWriter(c);
     //Compressor::Codified_File* cod =comp->treeReconstructor("Prueba_4_Tree.txt","Prueba_4_Codigote.txt");

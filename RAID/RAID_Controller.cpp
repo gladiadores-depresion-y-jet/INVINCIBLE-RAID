@@ -14,7 +14,7 @@ RAID_Controller::RAID_Controller()
 void RAID_Controller::Initializer()
 {
     this->diskList=new List<Disk*>();
-    this->c_disk=1;
+    this->c_disk=3;
     this->comp= new Compressor();
     DIR *rDir=opendir("RAID");
     if(rDir== nullptr)
@@ -170,27 +170,27 @@ void RAID_Controller::diskWriter(Compressor::Codified_File* coded,vector<Frag> p
 {
     for(int i=0;i<4;i++)
     {
-        if(i+1==4)
+        if(i==c_disk)
         {
-            ofstream outtree("RAID/Disk_"+to_string(c_disk)+"/"+coded->getName()+"_Parity.txt",ios::out|ios::binary);
+            ofstream outtree("RAID/Disk_"+to_string(c_disk+1)+"/"+coded->getName()+"_Parity.txt",ios::out|ios::binary);
             ofstream outT;
-            outT.open("RAID/Disk_"+to_string(c_disk)+"/"+coded->getName()+"_Parity.txt",ios::out|ios::binary);
+            outT.open("RAID/Disk_"+to_string(c_disk+1)+"/"+coded->getName()+"_Parity.txt",ios::out|ios::binary);
             outT<<"Size:"+to_string(parity.at(i).getRealSize())<<endl;
             outT<<parity.at(i).getFragment()<<endl;
         }
         else
         {
-            ofstream outtree("RAID/Disk_"+to_string(c_disk)+"/"+coded->getName()+"_Part_"+to_string(i+1)+".txt",ios::out|ios::binary);
+            ofstream outtree("RAID/Disk_"+to_string(i+1)+"/"+coded->getName()+"_Part_"+to_string(i+1)+".txt",ios::out|ios::binary);
             ofstream outT;
-            outT.open("RAID/Disk_"+to_string(c_disk)+"/"+coded->getName()+"_Part_"+to_string(i+1)+".txt",ios::out|ios::binary);
+            outT.open("RAID/Disk_"+to_string(i+1)+"/"+coded->getName()+"_Part_"+to_string(i+1)+".txt",ios::out|ios::binary);
             outT<<"Size:"+to_string(parity.at(i).getRealSize())<<endl;
             outT<<parity.at(i).getFragment()<<endl;
         }
-        c_disk++;
-        if(c_disk>4)
-        {
-            c_disk=1;
-        }
+    }
+    c_disk--;
+    if(c_disk<0)
+    {
+        c_disk=4;
     }
     ofstream outtree("../Trees/"+coded->getName()+"_Tree.txt",ios::out|ios::binary);
     ofstream outT;
@@ -275,13 +275,18 @@ vector<RAID_Controller::Frag> RAID_Controller::parityCalculator(vector<string> c
         }
     }
     string parity;
+    char act1[max];
+    char act2[max];
+    char act3[max];
+
+    strcpy(act1, out.at(0).getFragment().c_str());
+    strcpy(act2, out.at(1).getFragment().c_str());
+    strcpy(act3, out.at(2).getFragment().c_str());
+
     for(int k=0;k<max;k++)
     {
-        vector<char> act;
-        act.push_back(out.at(0).getFragment().at(k));
-        act.push_back(out.at(1).getFragment().at(k));
-        act.push_back(out.at(2).getFragment().at(k));
-        int mycount=std::count (act.begin(), act.end(),'1');
+        char act[3]={act1[k],act2[k],act3[k]};
+        int mycount= count(act,act+2,'1');
         if(mycount==0||mycount==2)
         {
             parity+="0";
@@ -296,4 +301,41 @@ vector<RAID_Controller::Frag> RAID_Controller::parityCalculator(vector<string> c
 
     return out;
 
+}
+
+vector<RAID_Controller::Frag> RAID_Controller::fragOptimizer(vector<RAID_Controller::Frag> vec)
+{
+    for(int i=0;i<3;i++)
+    {
+        int size=vec.at(i).getFragment().size();
+        char act1[size];
+        strcpy(act1, vec.at(0).getFragment().c_str());
+
+
+        int div=size/1000;
+        int extras=size%1000;
+        string out;
+        int k=0;
+        for(int j=0;j<div;j++)
+        {
+            while(out.size()!=1000)
+            {
+                if(extras>0)
+                {
+                    out+=act1[k];
+                    out+=act1[++k];
+                    extras--;
+                }
+                else
+                {
+                    out+=act1[k];
+                }
+                k++;
+            }
+            out+="\n";
+            int p=out.size();
+        }
+        vec.at(i).setFragment(out);
+    }
+    return vec;
 }

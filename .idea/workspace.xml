@@ -12,21 +12,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce78ecc8-1404-4b3d-8145-787670d947d3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Main/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RAID/RAID_Controller.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/RAID/RAID_Controller.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RAID/RAID_Controller.h" beforeDir="false" afterPath="$PROJECT_DIR$/RAID/RAID_Controller.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Structures/List.h" beforeDir="false" afterPath="$PROJECT_DIR$/Structures/List.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Structures/Node.h" beforeDir="false" afterPath="$PROJECT_DIR$/Structures/Node.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Prueba_4_New.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RAID/Disk_1/Parity_D" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RAID/Disk_1/Prueba_A$1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RAID/Disk_1/Prueba_B$1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RAID/Disk_2/Prueba_A$2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RAID/Disk_2/Prueba_B$2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RAID/Disk_3/Prueba_A$3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RAID/Disk_3/Prueba_C$2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RAID/Disk_4/Prueba_A$4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RAID/Disk_4/Prueba_B$4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/RAID/RAID_Controller.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RAID/Disk_1/Prueba2_Part_1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RAID/Disk_2/Prueba2_Part_2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RAID/Disk_3/Prueba2_Part_3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RAID/Disk_4/Prueba2_Parity.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RAID_5" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,11 +53,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Main/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="24" column="45" lean-forward="true" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
+            <state relative-caret-position="105">
+              <caret line="7" column="19" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
@@ -94,11 +89,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RAID/RAID_Controller.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+            <state relative-caret-position="117">
+              <caret line="187" column="9" selection-start-line="187" selection-start-column="9" selection-end-line="187" selection-end-column="9" />
               <folding>
                 <element signature="e#48#66#0" expanded="true" />
               </folding>
@@ -109,8 +104,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RAID/RAID_Controller.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="65" column="21" selection-start-line="65" selection-start-column="21" selection-end-line="65" selection-end-column="21" />
+            <state relative-caret-position="70">
+              <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
               <folding>
                 <element signature="e#116#147#0" expanded="true" />
               </folding>
@@ -121,8 +116,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Huffman_Compressor/Compressor.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1378">
-              <caret line="157" column="21" selection-start-line="157" selection-start-column="21" selection-end-line="157" selection-end-column="21" />
+            <state relative-caret-position="187">
+              <caret line="59" selection-start-line="59" selection-end-line="59" />
               <folding>
                 <element signature="e#150#181#0" expanded="true" />
               </folding>
@@ -219,8 +214,8 @@
         <option value="$PROJECT_DIR$/Structures/List.h" />
         <option value="$PROJECT_DIR$/Structures/Node.h" />
         <option value="$PROJECT_DIR$/RAID/RAID_Controller.h" />
-        <option value="$PROJECT_DIR$/Main/main.cpp" />
         <option value="$PROJECT_DIR$/RAID/RAID_Controller.cpp" />
+        <option value="$PROJECT_DIR$/Main/main.cpp" />
       </list>
     </option>
   </component>
@@ -332,12 +327,12 @@
       <workItem from="1559875842050" duration="4009000" />
       <workItem from="1559948079141" duration="6340000" />
       <workItem from="1559962165903" duration="22948000" />
-      <workItem from="1560014340583" duration="17001000" />
+      <workItem from="1560014340583" duration="26245000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154875000" />
+    <option name="totallyTimeSpent" value="164119000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -349,17 +344,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1366" height="741" extended-state="6" />
+    <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49609375" visible="true" weight="0.19015151" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49609375" weight="0.1339381" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.50390625" side_tool="true" weight="0.7643939" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.56033057" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.5594329" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.3293348" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.5983471" />
-      <window_info active="true" anchor="bottom" id="Debug" order="4" visible="true" weight="0.49917355" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.5299891" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.40130863" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.3289256" />
@@ -372,17 +367,17 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" weight="0.022727273" />
+      <window_info anchor="right" id="Database" order="3" weight="0.022411954" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49609375" visible="true" weight="0.19015151" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49609375" visible="true" weight="0.1339381" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.50390625" side_tool="true" weight="0.7643939" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.56033057" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.5594329" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.3293348" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.5983471" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.54710746" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.5299891" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.40130863" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.3289256" />
@@ -395,7 +390,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" weight="0.022727273" />
+      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.022411954" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -430,14 +425,29 @@
           <option name="timeStamp" value="153" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Main/main.cpp</url>
+          <line>25</line>
+          <option name="timeStamp" value="165" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/RAID/RAID_Controller.cpp</url>
-          <line>199</line>
-          <option name="timeStamp" value="156" />
+          <line>307</line>
+          <option name="timeStamp" value="178" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/RAID/RAID_Controller.cpp</url>
+          <line>337</line>
+          <option name="timeStamp" value="179" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/RAID/RAID_Controller.cpp</url>
+          <line>334</line>
+          <option name="timeStamp" value="180" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/RAID/RAID_Controller.cpp</url>
           <line>170</line>
-          <option name="timeStamp" value="163" />
+          <option name="timeStamp" value="181" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -683,8 +693,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Huffman_Compressor/Compressor.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1378">
-          <caret line="157" column="21" selection-start-line="157" selection-start-column="21" selection-end-line="157" selection-end-column="21" />
+        <state relative-caret-position="187">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
           <folding>
             <element signature="e#150#181#0" expanded="true" />
           </folding>
@@ -703,30 +713,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RAID/RAID_Controller.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="65" column="21" selection-start-line="65" selection-start-column="21" selection-end-line="65" selection-end-column="21" />
+        <state relative-caret-position="70">
+          <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
           <folding>
             <element signature="e#116#147#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main/main.cpp">
+    <entry file="file://$PROJECT_DIR$/RAID/RAID_Controller.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="24" column="45" lean-forward="true" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
+        <state relative-caret-position="117">
+          <caret line="187" column="9" selection-start-line="187" selection-start-column="9" selection-end-line="187" selection-end-column="9" />
           <folding>
-            <element signature="e#0#24#0" expanded="true" />
+            <element signature="e#48#66#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RAID/RAID_Controller.cpp">
+    <entry file="file://$PROJECT_DIR$/Main/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
-          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+          <caret line="7" column="19" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
           <folding>
-            <element signature="e#48#66#0" expanded="true" />
+            <element signature="e#0#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
