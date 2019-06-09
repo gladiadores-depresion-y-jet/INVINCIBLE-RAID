@@ -14,7 +14,7 @@ Compressor::Compressor()
 
 }
 
-Compressor::Codified_File* Compressor::compress(vector<char> digits,string ext,string name)
+Compressor::Codified_File* Compressor::compress(vector<char> digits,string ext,string name,string org)
 {
     cout<<"Comprimiendo..."<<endl;
     vector<Huffman_Node::Character> output;
@@ -63,8 +63,9 @@ Compressor::Codified_File* Compressor::compress(vector<char> digits,string ext,s
     map<char,string>codified=codifier(HuffTree,output);
     //print(codified,digits);
     string codigote=encoder(codified,digits);
+    int p=codigote.size();
     //cout<<"Codigote: "<<codigote<<endl;
-    Codified_File* out= new Codified_File(codigote,HuffTree,ext,name,codified);
+    Codified_File* out= new Codified_File(codigote,HuffTree,ext,name,codified,org);
     return out;
 }
 
@@ -239,7 +240,7 @@ Compressor::Decodified_File* Compressor::decompress(Compressor::Codified_File* c
     return dec;
 }
 
-Compressor::Codified_File* Compressor:: treeReconstructor(string dirTree,string dirCodigo)
+Compressor::Codified_File* Compressor:: treeReconstructor(string dirTree,string codigote)
 {
     std::ifstream file(dirTree);
     std::string str;
@@ -392,12 +393,7 @@ Compressor::Codified_File* Compressor:: treeReconstructor(string dirTree,string 
     Huffman_Tree* tree= new Huffman_Tree();
     tree->setTop(head);
 
-    std::ifstream fileC(dirCodigo);
-    std::string strC;
-    std::getline(fileC, strC);
-
-
-    auto codifiedFile= new Compressor::Codified_File(strC,*tree,ext,name,codes);
+    auto codifiedFile= new Compressor::Codified_File(codigote,*tree,ext,name,codes,"Incoming/"+name+"."+ext);
     return codifiedFile;
 }
 
@@ -407,12 +403,14 @@ void Compressor::writeToDiskComp(Compressor::Codified_File *file)
     ofstream out;
     out.open(file->getName()+"_Codigote."+file->getExt());
     out<<file->getCodigote()<<endl;
+    delete(file);
 }
 
 void Compressor::writeToDiskDecomp(Compressor::Decodified_File *DecFile)
 {
-    ofstream outfile(DecFile->getName()+"_New."+DecFile->getExt(), ios::out | ios::binary);
+    ofstream outfile("Outport/"+DecFile->getName()+"."+DecFile->getExt(), ios::out | ios::binary);
     outfile.write(&DecFile->getDigits()[0], DecFile->getDigits().size());
+    delete(DecFile);
 }
 
 

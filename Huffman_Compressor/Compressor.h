@@ -44,16 +44,18 @@ class Compressor
                 string codigote;
                 string ext;
                 string name;
+                string origin;
                 map<char,string> codes;
                 Huffman_Tree tree;
         public:
-            Codified_File(string c, Huffman_Tree ht,string ext,string nam,map<char,string> cod )
+            Codified_File(string c, Huffman_Tree ht,string ext,string nam,map<char,string> cod,string org)
             {
                 this->codes=cod;
                 this->codigote=c;
                 this->tree=ht;
                 this->ext=ext;
                 this->name=nam;
+                this->origin=org;
             }
             string getCodigote()
             {
@@ -143,7 +145,7 @@ class Compressor
                 }
         };
         Compressor();
-        Codified_File* compress(vector<char> digits,string ext,string nam);
+        Codified_File* compress(vector<char> digits,string ext,string nam,string org);
         Decodified_File* decompress(Codified_File* code);
         Decodified_File* alterdecode(Codified_File* code);
         List<Huffman_Node *> * VecToList(vector<Huffman_Node::Character> vec);
@@ -153,7 +155,7 @@ class Compressor
         Codifier_Node* backTrackCoder(Codifier_Node* cod, Huffman_Node* temp,Huffman_Node* alttemp ,string code);
         void print(vector<Code>,vector<char> word);
         string encoder(map<char,string> codes, vector<char> keys);
-        Codified_File* treeReconstructor(string dirTree, string dirCodigo);
+        Codified_File* treeReconstructor(string dirTree, string codigote);
         void writeToDiskComp(Codified_File* file);
         void writeToDiskDecomp(Decodified_File* dec);
 };

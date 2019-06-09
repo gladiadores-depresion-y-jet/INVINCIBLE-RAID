@@ -7,7 +7,6 @@
 
 
 #include "../Structures/List.h"
-#include "Disk.h"
 #include "../Huffman_Compressor/Compressor.h"
 #include <dirent.h>
 #include <iostream>
@@ -20,6 +19,8 @@
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include "../Structures/Node.h"
+#include "Disk.h"
+#include "boost/algorithm/string.hpp"
 
 namespace fs = std::experimental::filesystem;
 using namespace cv;
@@ -27,9 +28,10 @@ using namespace cv;
 class RAID_Controller
 {
     private:
-        int disks;
+
         int c_disk;
-        List<Disk*>* diskList;
+        map<string,Disk*>* disks;
+        map<string,FilePart*>* trees;
         Compressor *comp;
     public:
     struct Frag
@@ -59,16 +61,20 @@ class RAID_Controller
     };
         RAID_Controller();
         void Initializer();
+        map<string,Disk*>* getDisks();
         bool dirCreator(const char* dir);
-        void diskInitializer(bool exists);
-        Disk* diskGetter(int diskN);
+        void diskInitializer();
         Compressor::Codified_File* imageDecomposer(string dir);
-        void imageSplitter(string dir,string outDir);
+        void imageSplitter(string dir,string outDir,int disk_n,int i);
         void diskWriter(Compressor::Codified_File* coded,vector<Frag> parity);
         void compose(Compressor::Decodified_File *DecFile);
         vector<string> codigoteSplitter(string codigote);
         vector<Frag> parityCalculator(vector<string>);
-        vector<Frag> fragOptimizer(vector<Frag>);
+        void reconstructDisk(int number);
+        void diskVerifier();
+        map<string,FilePart*>* fileFetcher(string dir);
+        map<string,FilePart*>* treesFetcher();
+        Compressor::Codified_File* merge(string name);
 
 
 };

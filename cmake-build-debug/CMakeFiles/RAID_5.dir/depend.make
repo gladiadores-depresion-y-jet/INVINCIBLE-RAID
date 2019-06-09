@@ -28,8 +28,6 @@ CMakeFiles/RAID_5.dir/Main/main.cpp.o: ../Structures/Node.h
 CMakeFiles/RAID_5.dir/RAID/Disk.cpp.o: ../RAID/Disk.cpp
 CMakeFiles/RAID_5.dir/RAID/Disk.cpp.o: ../RAID/Disk.h
 CMakeFiles/RAID_5.dir/RAID/Disk.cpp.o: ../RAID/FilePart.h
-CMakeFiles/RAID_5.dir/RAID/Disk.cpp.o: ../Structures/List.h
-CMakeFiles/RAID_5.dir/RAID/Disk.cpp.o: ../Structures/Node.h
 
 CMakeFiles/RAID_5.dir/RAID/FilePart.cpp.o: ../RAID/FilePart.cpp
 CMakeFiles/RAID_5.dir/RAID/FilePart.cpp.o: ../RAID/FilePart.h

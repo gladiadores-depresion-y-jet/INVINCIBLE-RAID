@@ -8,9 +8,13 @@ using namespace std;
 using namespace cv;
 int main()
 {
-    /*auto comp= new Compressor();*/
+    auto comp= new Compressor();
 
     auto *r= new RAID_Controller();
+    r->imageDecomposer("Incoming/Prueba.jpg");
+    Compressor::Codified_File* c=r->merge("Prueba");
+    comp->writeToDiskDecomp(comp->decompress(c));
+
     /*string s="{\n"
              "    \"Image0\": \"{\\n    \\\"name\\\": \\\"danielImage\\\",\\n    \\\"author\\\": \\\"SOFIA\\\",\\n    \\\"description\\\": \\\"this shit\\\",\\n    \\\"year\\\": \\\"2018\\\",\\n    \\\"size\\\": \\\"2000\\\"\\n}\\n\",\n"
              "    \"Image1\": \"{\\n    \\\"name\\\": \\\"gabriel\\\",\\n    \\\"author\\\": \\\"GARZA\\\",\\n    \\\"description\\\": \\\"this is a description\\\",\\n    \\\"year\\\": \\\"2019\\\",\\n    \\\"size\\\": \\\"2000\\\"\\n}\\n\"\n"
@@ -22,8 +26,8 @@ int main()
     }
     Compressor::Codified_File* file=comp->compress(ch,"txt","JSON");*/
 
-    Compressor::Codified_File* c=r->imageDecomposer("Prueba.jpg");
-    c=r->imageDecomposer("Prueba2.jpg");
+    /*Compressor::Codified_File* c=r->imageDecomposer("Prueba.jpg");
+    c=r->imageDecomposer("Prueba2.jpg");*/
     //Compressor::Decodified_File* dec=comp->decompress(c);
     //r->diskWriter(c);
     //Compressor::Codified_File* cod =comp->treeReconstructor("Prueba_4_Tree.txt","Prueba_4_Codigote.txt");

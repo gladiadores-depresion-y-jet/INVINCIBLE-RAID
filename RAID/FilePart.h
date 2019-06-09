@@ -12,12 +12,11 @@ class FilePart
 {
     private:
         string filename;
-        int filePartN;
+        string path;
     public:
-        FilePart(int fNumb, string fNam);
-        FilePart(string fNam);
+        FilePart(string fNam,string path);
         string getFileName();
-        int getFilePartN();
+        string getFilePath();
 
 };
 
