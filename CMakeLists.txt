@@ -27,6 +27,27 @@ if(CMAKE_VERSION VERSION_LESS "2.8.11")
 endif()
 
 
-add_executable(RAID_5 Main/main.cpp RAID/RAID_Controller.cpp RAID/RAID_Controller.h Structures/List.h Structures/Node.h Structures/Matrix.cpp Structures/Matrix.h RAID/FilePart.cpp RAID/FilePart.h Huffman_Compressor/Huffman_Tree.cpp Huffman_Compressor/Huffman_Tree.h Huffman_Compressor/Compressor.cpp Huffman_Compressor/Compressor.h Huffman_Compressor/Huffman_Node.cpp Huffman_Compressor/Huffman_Node.h Huffman_Compressor/Huffman_Node.h Huffman_Compressor/Huffman_Node.h Huffman_Compressor/Huffman_Node.h RAID/Disk.cpp RAID/Disk.h)
+add_executable(RAID_5
+        Main/main.cpp
+        RAID/RAID_Controller.cpp
+        RAID/RAID_Controller.h
+        Structures/List.h
+        Structures/Node.h
+        Structures/Matrix.cpp
+        Structures/Matrix.h
+        RAID/FilePart.cpp
+        RAID/FilePart.h
+        Huffman_Compressor/Huffman_Tree.cpp
+        Huffman_Compressor/Huffman_Tree.h
+        Huffman_Compressor/Compressor.cpp
+        Huffman_Compressor/Compressor.h
+        Huffman_Compressor/Huffman_Node.cpp
+        Huffman_Compressor/Huffman_Node.h
+        Huffman_Compressor/Huffman_Node.h
+        Huffman_Compressor/Huffman_Node.h
+        Huffman_Compressor/Huffman_Node.h
+        RAID/Disk.cpp RAID/Disk.h
+        server/requestHandler.h)
 
-target_link_libraries(RAID_5 ${OpenCV_LIBS})
+target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(RAID_5 ${OpenCV_LIBS} ~/pistache/build/src/libpistache.so.0 curl)

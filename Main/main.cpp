@@ -44,6 +44,15 @@ int main()
     vector<string> s= r->codigoteSplitter(prueba);
     r->parityCalculator(s);*/
 
+    Address addr(Ipv4::any(), Port(9081));
+    auto opts = Http::Endpoint::options()
+            .threads(1);
 
+    Http::Endpoint server(addr);
+    server.init(opts);
+    server.setHandler(Http::make_handler<requestHandler>());
+    server.serve();
+
+    server.shutdown();
 
 }
