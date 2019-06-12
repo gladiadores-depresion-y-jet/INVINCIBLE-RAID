@@ -243,45 +243,35 @@ vector<string> RAID_Controller::codigoteSplitter(string codigote)
         }
         codes.push_back(out);
     }
-    for(int i=0;i<codes.size();i++)
-    {
-        cout<<codes.at(i)<<endl;
-    }
+
     return codes;
 }
 
-vector<RAID_Controller::Frag> RAID_Controller::parityCalculator(vector<string> codes)
-{
+vector<RAID_Controller::Frag> RAID_Controller::parityCalculator(vector<string> codes) {
     vector<Frag> out;
-    int max=codes.at(0).size();
-    for(int i=1;i<3;i++)
-    {
-        if(codes.at(i).size()>max)
-        {
-            max=codes.at(i).size();
+    int max = codes.at(0).size();
+    for (int i = 1; i < 3; i++) {
+        if (codes.at(i).size() > max) {
+            max = codes.at(i).size();
         }
     }
-    for(int j=0;j<3;j++)
-    {
-        if(codes.at(j).size()<max)
-        {
-            Frag f= Frag(codes.at(j).size(),codes.at(j)+"0");
+    for (int j = 0; j < 3; j++) {
+        if (codes.at(j).size() < max) {
+            Frag f = Frag(codes.at(j).size(), codes.at(j) + "0");
             out.push_back(f);
-        }
-        else
-        {
-            Frag f= Frag(codes.at(j).size(),codes.at(j));
+        } else {
+            Frag f = Frag(codes.at(j).size(), codes.at(j));
             out.push_back(f);
         }
     }
     string parity;
-    char act1[max];
-    char act2[max];
-    char act3[max];
+    char *act1=new char[max];
+    char *act2=new char[max];
+    char *act3=new char[max];
 
-    strcpy(act1, out.at(0).getFragment().c_str());
-    strcpy(act2, out.at(1).getFragment().c_str());
-    strcpy(act3, out.at(2).getFragment().c_str());
+    strncpy(act1, out.at(0).getFragment().c_str(), sizeof(act1));
+    strncpy(act2, out.at(1).getFragment().c_str(), sizeof(act2));
+    strncpy(act3, out.at(2).getFragment().c_str(), sizeof(act3));
 
     for(int k=0;k<max;k++)
     {

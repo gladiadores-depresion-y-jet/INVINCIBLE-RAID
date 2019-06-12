@@ -11,9 +11,9 @@ int main()
     auto comp= new Compressor();
 
     auto *r= new RAID_Controller();
-    r->imageDecomposer("Incoming/Prueba.jpg");
-    Compressor::Codified_File* c=r->merge("Prueba");
-    comp->writeToDiskDecomp(comp->decompress(c));
+    r->imageDecomposer("Incoming/Prueba_4.jpg");
+    Compressor::Codified_File* k=r->merge("Prueba_4");
+    comp->writeToDiskDecomp(comp->decompress(k));
 
     /*string s="{\n"
              "    \"Image0\": \"{\\n    \\\"name\\\": \\\"danielImage\\\",\\n    \\\"author\\\": \\\"SOFIA\\\",\\n    \\\"description\\\": \\\"this shit\\\",\\n    \\\"year\\\": \\\"2018\\\",\\n    \\\"size\\\": \\\"2000\\\"\\n}\\n\",\n"
