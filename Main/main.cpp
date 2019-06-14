@@ -20,16 +20,29 @@ int main()
         if(cond)
         {
             /*Compressor::Codified_File* T1=r->imageDecomposer("Incoming/Prueba.jpg");
-            Compressor::Codified_File* T2=r->imageDecomposer("Incoming/Prueba5.jpg");*/
+            Compressor::Codified_File* T2=r->imageDecomposer("Incoming/Prueba2.jpg");
+            Compressor::Codified_File* T3=r->imageDecomposer("Incoming/Prueba3.jpg");
+            Compressor::Codified_File* T4=r->imageDecomposer("Incoming/Prueba4.jpg");
+            Compressor::Codified_File* T5=r->imageDecomposer("Incoming/Prueba5.jpg");
+            Compressor::Codified_File* T6=r->imageDecomposer("Incoming/PruebaSing.jpeg");*/
+            Compressor::Codified_File* T7=r->imageDecomposer("Incoming/Prueba6.gif");
 
-            Compressor::Codified_File *l = r->merge("Prueba_");
-            Compressor::Codified_File *k = r->merge("Prueba5_");
 
-            comp->writeToDiskDecomp(comp->decompress(l));
-            Compressor camp= Compressor();
-            camp.writeToDiskDecomp(comp->decompress(k));
 
-            cond=false;
+            /*Compressor::Codified_File *t1 = r->merge("Prueba_");
+            Compressor::Codified_File *t2= r->merge("Prueba2_");
+            Compressor::Codified_File *t3= r->merge("Prueba3_");
+            Compressor::Codified_File *t4= r->merge("Prueba4_");
+            Compressor::Codified_File *t5= r->merge("Prueba5_");
+            Compressor::Codified_File *t6= r->merge("PruebaSing_");
+
+            comp->writeToDiskDecomp(comp->decompress(t1));
+            comp->writeToDiskDecomp(comp->decompress(t2));
+            comp->writeToDiskDecomp(comp->decompress(t3));
+            comp->writeToDiskDecomp(comp->decompress(t4));
+            comp->writeToDiskDecomp(comp->decompress(t5));
+            comp->writeToDiskDecomp(comp->decompress(t6));
+*/            cond=false;
         }
     }
     /*string s="{\n"

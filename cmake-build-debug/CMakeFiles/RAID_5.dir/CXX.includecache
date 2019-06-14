@@ -1053,6 +1053,8 @@ boost/algorithm/string.hpp
 /home/dcamachog1501/Induced_Desktop/RAID_5/RAID/boost/algorithm/string.hpp
 thread
 -
+cstdio
+-
 
 /home/dcamachog1501/Induced_Desktop/RAID_5/Structures/List.h
 Node.h

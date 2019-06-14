@@ -22,6 +22,7 @@
 #include "Disk.h"
 #include "boost/algorithm/string.hpp"
 #include <thread>
+#include <cstdio>
 
 namespace fs = std::experimental::filesystem;
 using namespace cv;
@@ -33,7 +34,7 @@ class RAID_Controller
         int c_disk;
         map<string,Disk*>* disks;
         map<string,FilePart*>* trees;
-        Compressor comp;
+        Compressor* comp;
     public:
     struct Frag
     {
@@ -79,7 +80,7 @@ class RAID_Controller
         void XORrecovery(FilePart *part,FilePart* info);
         void repair(Disk* reference,Disk* antreference);
         Compressor::Codified_File* merge(string name);
-
+        void imageRestore(FilePart* img,int diskN);
 };
 
 

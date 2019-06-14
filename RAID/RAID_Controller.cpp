@@ -17,13 +17,13 @@ void RAID_Controller::Initializer()
 {
     this->c_disk=3;
     this->disks= new map<string,Disk*>();
+    this->comp=new Compressor();
     DIR *rDir=opendir("RAID");
     if(rDir== nullptr)
     {
         if (dirCreator("RAID"))
         {
             cout << "RAID creado\n";
-            diskInitializer();
         }
         else
         {
@@ -34,7 +34,6 @@ void RAID_Controller::Initializer()
     else
     {
         cout<<"El RAID ya existe\n"<<endl;
-        diskInitializer();
     }
     DIR *inDir=opendir("Incoming");
     if(inDir== nullptr)
@@ -47,6 +46,7 @@ void RAID_Controller::Initializer()
     {
         dirCreator("Outport");
     }
+    diskInitializer();
 
 }
 
@@ -88,7 +88,6 @@ bool RAID_Controller::dirCreator(const char* dir)
 
 Compressor::Codified_File* RAID_Controller::imageDecomposer(string dir)
 {
-    this->comp=Compressor();
     diskVerifier();
     vector<string> input;
     boost::split(input,dir, boost::is_any_of("."));
@@ -100,7 +99,7 @@ Compressor::Codified_File* RAID_Controller::imageDecomposer(string dir)
     std::vector<char> data(buffer, buffer+int(pos));
     vector<string> inp;
     boost::split(inp,input[0], boost::is_any_of("/"));
-    Compressor::Codified_File* code=comp.compress(data,input.at(1),inp.at(1),dir);
+    Compressor::Codified_File* code=comp->compress(data,input.at(1),inp.at(1),dir);
 
     vector<Frag> f= parityCalculator(codigoteSplitter(code->getCodigote()));
     diskWriter(code,f);
@@ -130,13 +129,17 @@ void RAID_Controller::imageSplitter(string dir, string name,int disk_n,int i)
         crop= Rect(2*image.cols/3,0,image.cols/3,image.rows);
     }
     Mat cropped=image(crop);
-    imwrite(this->disks->at("Disk_"+to_string(disk_n))->getAdress()+"/"+name+"_"+"ImgPt_"+to_string(i+1)+".jpg",cropped);
+
+    vector<string> inp;
+    boost::split(inp,dir, boost::is_any_of("."));
+
+    imwrite(this->disks->at("Disk_"+to_string(disk_n))->getAdress()+"/"+name+"_"+"ImgPt_"+to_string(i+1)+"."+inp.at(1),cropped);
 }
 
 void RAID_Controller::diskWriter(Compressor::Codified_File* coded,vector<Frag> parity)
 {
     int part=1;
-    int parityind=0;
+    int parityind=-1;
     for(int i=0;i<4;i++)
     {
         if(i==c_disk)
@@ -158,7 +161,7 @@ void RAID_Controller::diskWriter(Compressor::Codified_File* coded,vector<Frag> p
         else
         {
             ofstream outT(this->disks->at("Disk_"+to_string(i+1))->getAdress()+"/"+coded->getName()+"_Part_"+to_string(part)+".txt",ios::out|ios::binary);
-            if(parityind!=0)
+            if(parityind!=-1)
             {
                 outT<<"Size:"+to_string(parity.at(parityind).getRealSize())<<endl;
                 outT<<parity.at(parityind).getFragment()<<endl;
@@ -183,7 +186,7 @@ void RAID_Controller::diskWriter(Compressor::Codified_File* coded,vector<Frag> p
             }
             else
             {
-                imageSplitter("Incoming/"+coded->getName()+"."+coded->getExt(),coded->getName(),i+1,i);
+                imageSplitter("Incoming/"+coded->getName()+"."+coded->getExt(),coded->getName(),i+1,part-1);
             }
             part++;
 
@@ -192,7 +195,7 @@ void RAID_Controller::diskWriter(Compressor::Codified_File* coded,vector<Frag> p
     c_disk--;
     if(c_disk<0)
     {
-        c_disk=4;
+        c_disk=3;
     }
     ofstream outT("../Trees/"+coded->getName()+"_Tree.txt",ios::out|ios::binary);
     int ind=coded->getCodes().size();
@@ -396,13 +399,21 @@ bool RAID_Controller::reconstructDisk(int number)
                         break;
                     }
                 }
-                if(missing!=0)
+                if(missing!=4&&missing!=0)
                 {
                     FilePart* f= new FilePart(currentParts.at(0)->getPureName()+"_Part_"+to_string(missing)+".txt",reference->getAdress()+"/"+currentParts.at(0)->getPureName()+"_Part_"+to_string(missing)+".txt",currentParts.at(0)->getPureName(),missing);
                     reference->getfileColumn()->emplace(pair<string,FilePart*>(f->getFileName(),f));
                 }
+                else if(missing==4)
+                {
+                    FilePart* f= new FilePart(currentParts.at(0)->getPureName()+"_Parity.txt",reference->getAdress()+"/"+currentParts.at(0)->getPureName()+"_Parity.txt",currentParts.at(0)->getPureName(),missing);
+                    reference->getfileColumn()->emplace(pair<string,FilePart*>(f->getFileName(),f));
+                }
                 missing=0;
-                numbs={currentImgs.at(0)->getpartNumb()%10,currentImgs.at(1)->getpartNumb()%10};
+                for(int j=0;j<currentImgs.size();j++)
+                {
+                    numbs.push_back(currentImgs.at(j)->getpartNumb()%10);
+                }
                 for(int i=1;i<=3;i++)
                 {
                     if(std::find(numbs.begin(), numbs.end(),i) == numbs.end())
@@ -552,7 +563,6 @@ void RAID_Controller::XORrecovery(FilePart *part,FilePart* info)
             extras--;
         }
     }
-    int realS=arr[part->getpartNumb()-1];
     vector<string>codes;
     for(int i=0;i<parts.size();i++)
     {
@@ -563,6 +573,16 @@ void RAID_Controller::XORrecovery(FilePart *part,FilePart* info)
         codes.push_back(str);
     }
     vector<RAID_Controller::Frag> frags=parityCalculator(codes);
+
+    int realS;
+    if(part->getpartNumb()<4)
+    {
+        realS=arr[part->getpartNumb()-1];
+    }
+    else
+    {
+        realS=frags.at(0).getFragment().size();
+    }
     ofstream outT(part->getFilePath());
     outT<<"Size:"<<realS<<endl;
     outT<<frags.at(3).getFragment()<<endl;
@@ -601,17 +621,39 @@ void RAID_Controller::repair(Disk* reference,Disk* antreference)
         {
             FilePart* inf= new FilePart(info->getFileName(),reference->getAdress()+"/"+info->getFileName(),info->getPureName(),info->getpartNumb());
             string n=antreference->getfileColumn()->at(name)->getPureName();
-            infoFile.emplace(pair<string,FilePart*>(n,info));
+            infoFile.emplace(pair<string,FilePart*>(n,inf));
         }
     }
     for(auto const& imap:infoFile)
     {
         string name=imap.first;
+
+        FilePart* actInf=infoFile.at(name);
+        FilePart* actAnte=antreference->getfileColumn()->at(actInf->getFileName());
+
+        std::ifstream file(actAnte->getFilePath());
+        std::string str;
+        getline(file,str);
+
+        ofstream outT(actInf->getFilePath());
+        outT<<str<<endl;
+
         for(int i=0;i<parts.size();i++)
         {
             if(parts.at(i)->getPureName()==name)
             {
                 XORrecovery(parts.at(i),infoFile.at(name));
+            }
+            if(imgs.at(i)->getPureName()==name)
+            {
+                imageRestore(imgs.at(i),reference->getDiskN());
+            }
+        }
+        for(int i=0;i<parity.size();i++)
+        {
+            if(parity.at(i)->getPureName()==name)
+            {
+                XORrecovery(parity.at(i),infoFile.at(name));
             }
         }
     }
@@ -620,7 +662,6 @@ void RAID_Controller::repair(Disk* reference,Disk* antreference)
 Compressor::Codified_File* RAID_Controller::merge(string name)
 {
     diskVerifier();
-    this->comp=Compressor();
     vector<FilePart*> parts;
     for(int i=0;i<this->disks->size();i++)
     {
@@ -663,6 +704,21 @@ Compressor::Codified_File* RAID_Controller::merge(string name)
             }
         }
     }
-    Compressor::Codified_File* c= this->comp.treeReconstructor(dirTree,codigote);
+    Compressor::Codified_File* c= this->comp->treeReconstructor(dirTree,codigote);
     return c;
+}
+
+void RAID_Controller::imageRestore(FilePart* img,int diskN)
+{
+    int imgN=img->getpartNumb()%10;
+    Compressor::Codified_File *l =merge(img->getPureName()+"_");
+    comp->writeToDiskDecomp(comp->decompress(l));
+
+    vector<string> input;
+    string str=img->getFileName();
+    boost::split(input,str, boost::is_any_of("."));
+
+    imageSplitter("Outport/"+img->getPureName()+"."+input.at(1),img->getPureName(),diskN,imgN-1);
+    remove(("Outport/"+img->getPureName()+"."+input.at(1)).c_str());
+
 }
