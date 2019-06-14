@@ -9,6 +9,7 @@
 #include <vector>
 #include "Huffman_Node.h"
 #include "../Structures/List.h"
+#include "../RAID/Disk.h"
 #include "Huffman_Tree.h"
 #include <map>
 
@@ -156,8 +157,8 @@ class Compressor
         void print(vector<Code>,vector<char> word);
         string encoder(map<char,string> codes, vector<char> keys);
         Codified_File* treeReconstructor(string dirTree, string codigote);
-        void writeToDiskComp(Codified_File* file);
         void writeToDiskDecomp(Decodified_File* dec);
+        bool compare(Codified_File* org,Codified_File* t);
 };
 
 

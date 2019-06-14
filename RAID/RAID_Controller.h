@@ -21,6 +21,7 @@
 #include "../Structures/Node.h"
 #include "Disk.h"
 #include "boost/algorithm/string.hpp"
+#include <thread>
 
 namespace fs = std::experimental::filesystem;
 using namespace cv;
@@ -32,7 +33,7 @@ class RAID_Controller
         int c_disk;
         map<string,Disk*>* disks;
         map<string,FilePart*>* trees;
-        Compressor *comp;
+        Compressor comp;
     public:
     struct Frag
     {
@@ -70,12 +71,14 @@ class RAID_Controller
         void compose(Compressor::Decodified_File *DecFile);
         vector<string> codigoteSplitter(string codigote);
         vector<Frag> parityCalculator(vector<string>);
-        void reconstructDisk(int number);
+        bool reconstructDisk(int number);
         void diskVerifier();
         map<string,FilePart*>* fileFetcher(string dir);
         map<string,FilePart*>* treesFetcher();
+        void diskVerifierT();
+        void XORrecovery(FilePart *part,FilePart* info);
+        void repair(Disk* reference,Disk* antreference);
         Compressor::Codified_File* merge(string name);
-
 
 };
 

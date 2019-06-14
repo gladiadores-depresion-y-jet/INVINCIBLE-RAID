@@ -11,12 +11,17 @@ using namespace std;
 class FilePart
 {
     private:
+        string purename;
+        int partNumb;
         string filename;
         string path;
     public:
-        FilePart(string fNam,string path);
+        FilePart(string fNam,string path,string pn,int pr);
         string getFileName();
         string getFilePath();
+        string getPureName();
+        int getpartNumb();
+        void setPath(string dir);
 
 };
 

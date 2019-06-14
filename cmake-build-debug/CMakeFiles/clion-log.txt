@@ -1,20 +1,8 @@
-/home/kugelblitz/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/191.6707.69/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/kugelblitz/Documents/INVINCIBLE-RAID
-CMake Error at CMakeLists.txt:13 (find_package):
-  By not providing "FindOpenCV.cmake" in CMAKE_MODULE_PATH this project has
-  asked CMake to find a package configuration file provided by "OpenCV", but
-  CMake did not find one.
-
-  Could not find a package configuration file provided by "OpenCV" with any
-  of the following names:
-
-    OpenCVConfig.cmake
-    opencv-config.cmake
-
-  Add the installation prefix of "OpenCV" to CMAKE_PREFIX_PATH or set
-  "OpenCV_DIR" to a directory containing one of the above files.  If "OpenCV"
-  provides a separate development package or SDK, be sure it has been
-  installed.
-
-
--- Configuring incomplete, errors occurred!
-See also "/home/kugelblitz/Documents/INVINCIBLE-RAID/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+/snap/clion/73/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/dcamachog1501/Induced_Desktop/RAID_5
+-- OpenCV library status:
+--     version: 3.3.1
+--     libraries: opencv_calib3d;opencv_core;opencv_dnn;opencv_features2d;opencv_flann;opencv_highgui;opencv_imgcodecs;opencv_imgproc;opencv_ml;opencv_objdetect;opencv_photo;opencv_shape;opencv_stitching;opencv_superres;opencv_video;opencv_videoio;opencv_videostab;opencv_aruco;opencv_bgsegm;opencv_bioinspired;opencv_ccalib;opencv_cvv;opencv_datasets;opencv_dpm;opencv_face;opencv_freetype;opencv_fuzzy;opencv_hdf;opencv_img_hash;opencv_line_descriptor;opencv_optflow;opencv_phase_unwrapping;opencv_plot;opencv_reg;opencv_rgbd;opencv_saliency;opencv_sfm;opencv_stereo;opencv_structured_light;opencv_surface_matching;opencv_text;opencv_tracking;opencv_xfeatures2d;opencv_ximgproc;opencv_xobjdetect;opencv_xphoto
+--     include path: /usr/local/include;/usr/local/include/opencv
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/dcamachog1501/Induced_Desktop/RAID_5/cmake-build-debug

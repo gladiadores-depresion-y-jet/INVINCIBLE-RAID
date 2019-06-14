@@ -11,7 +11,13 @@ Disk::Disk(int dNumb,string adr)
     this->regfileN=0;
     this->parityN=0;
 }
-
+Disk::Disk()
+{
+    this->diskN=0;
+    this->adress="";
+    this->regfileN=0;
+    this->parityN=0;
+}
 int Disk::getDiskN()
 {
     return this->diskN;

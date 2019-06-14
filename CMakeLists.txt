@@ -48,6 +48,10 @@ add_executable(RAID_5
         Huffman_Compressor/Huffman_Node.h
         RAID/Disk.cpp RAID/Disk.h
         server/requestHandler.h)
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -pthread")
+set(THREADS_PREFER_PTHREAD_FLAG ON)
+
+find_package(Threads REQUIRED)
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 target_link_libraries(RAID_5 ${OpenCV_LIBS} ~/pistache/build/src/libpistache.so.0 curl)

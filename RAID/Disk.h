@@ -20,6 +20,7 @@ private:
 
 public:
     Disk(int dNumb,string adr);
+    Disk();
     int getDiskN();
     int getFileN();
     map<string,FilePart*>* getfileColumn();

@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <iostream>
 #include <fstream>
+#include <RAID/FilePart.h>
 #include "Compressor.h"
 #include "../Structures/List.h"
 #include "Huffman_Tree.h"
@@ -61,10 +62,7 @@ Compressor::Codified_File* Compressor::compress(vector<char> digits,string ext,s
     Huffman_Tree HuffTree= Huffman_Tree();
     HuffTree.setTop(HuffList->getHead()->getValue());
     map<char,string>codified=codifier(HuffTree,output);
-    //print(codified,digits);
     string codigote=encoder(codified,digits);
-    int p=codigote.size();
-    //cout<<"Codigote: "<<codigote<<endl;
     Codified_File* out= new Codified_File(codigote,HuffTree,ext,name,codified,org);
     return out;
 }
@@ -207,15 +205,10 @@ Compressor::Decodified_File* Compressor::decompress(Compressor::Codified_File* c
     int i=0;
     while(i<ind)
     {
-
         char act=var.at(i);
         Huffman_Node* temp=code->getTree().getTop();
         while(temp->getValue()->getDigit()==nullptr)
         {
-            if(i==533)
-            {
-                int p=0;
-            }
             if(act=='1')
             {
                 temp=temp->getRight();
@@ -281,18 +274,10 @@ Compressor::Codified_File* Compressor:: treeReconstructor(string dirTree,string 
                     {
                         if(t=='1')
                         {
-                            if(temp->getRight()!= nullptr)
-                            {
-                                int p=0;
-                            }
                             temp->setRight(n);
                         }
                         else if(t=='0')
                         {
-                            if(temp->getLeft()!= nullptr)
-                            {
-                                int p=0;
-                            }
                             temp->setleft(n);
                         }
                         break;
@@ -347,18 +332,10 @@ Compressor::Codified_File* Compressor:: treeReconstructor(string dirTree,string 
                 {
                     if(t=='1')
                     {
-                        if(temp->getRight()!= nullptr)
-                        {
-                            int p=0;
-                        }
                         temp->setRight(n);
                     }
                     else if(t=='0')
                     {
-                        if(temp->getLeft()!= nullptr)
-                        {
-                            int p=0;
-                        }
                         temp->setleft(n);
                     }
                     break;
@@ -396,21 +373,13 @@ Compressor::Codified_File* Compressor:: treeReconstructor(string dirTree,string 
     auto codifiedFile= new Compressor::Codified_File(codigote,*tree,ext,name,codes,"Incoming/"+name+"."+ext);
     return codifiedFile;
 }
-
-void Compressor::writeToDiskComp(Compressor::Codified_File *file)
-{
-    ofstream outfile(file->getName()+"_Codigote."+file->getExt(), ios::out | ios::binary);
-    ofstream out;
-    out.open(file->getName()+"_Codigote."+file->getExt());
-    out<<file->getCodigote()<<endl;
-    delete(file);
-}
-
 void Compressor::writeToDiskDecomp(Compressor::Decodified_File *DecFile)
 {
     ofstream outfile("Outport/"+DecFile->getName()+"."+DecFile->getExt(), ios::out | ios::binary);
     outfile.write(&DecFile->getDigits()[0], DecFile->getDigits().size());
     delete(DecFile);
 }
+
+
 
 

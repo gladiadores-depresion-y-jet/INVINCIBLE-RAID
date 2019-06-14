@@ -4,10 +4,12 @@
 
 #include "FilePart.h"
 
-FilePart::FilePart(string fNam,string p)
+FilePart::FilePart(string fNam,string p,string pname,int pr)
 {
     this->filename=fNam;
     this->path=p;
+    this->purename=pname;
+    this->partNumb=pr;
 }
 string FilePart::getFileName()
 {
@@ -18,5 +20,16 @@ string FilePart::getFilePath()
 {
     return this->path;
 }
+string FilePart::getPureName()
+{
+    return this->purename;
+}
+int FilePart::getpartNumb()
+{
+    return this->partNumb;
+}
 
-
+void FilePart::setPath(string dir)
+{
+    this->path=dir;
+}

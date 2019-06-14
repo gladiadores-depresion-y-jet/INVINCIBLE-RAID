@@ -16,7 +16,6 @@ RAID_Controller::RAID_Controller()
 void RAID_Controller::Initializer()
 {
     this->c_disk=3;
-    this->comp= new Compressor();
     this->disks= new map<string,Disk*>();
     DIR *rDir=opendir("RAID");
     if(rDir== nullptr)
@@ -56,25 +55,11 @@ void RAID_Controller::diskInitializer()
 
     for(int i=1;i<=4;i++)
     {
-        DIR *rDir=opendir(("RAID/Disk_"+to_string(i)).c_str());
-        if(rDir!= nullptr)
-        {
-            Disk *d = new Disk(i,"RAID/Disk_"+to_string(i));
-            map<string,FilePart*>* col= new map<string,FilePart*>();
-            d->setFileColumn(col);
-            this->disks->insert(pair<string,Disk*>("Disk_"+to_string(i),d) );
-            d->setFileColumn(fileFetcher("RAID/Disk_"+to_string(i)));
-        }
-        else
-        {
-            cout<<"El disco "<<to_string(i)<<" no existe"<<endl;
-            dirCreator(("RAID/Disk_"+to_string(i)).c_str());
-            Disk *d = new Disk(i,"RAID/Disk_"+to_string(i));
-            map<string,FilePart*>* col= new map<string,FilePart*>();
-            d->setFileColumn(col);
-            this->disks->insert(pair<string,Disk*>("Disk_"+to_string(i),d) );
-            cout<<"Disco "<<to_string(i)<<" reestablecido, iniciando reconstruccion\n"<<endl;
-        }
+        Disk *d = new Disk(i,"RAID/Disk_"+to_string(i));
+        map<string,FilePart*>* col=fileFetcher(d->getAdress());
+        d->setFileColumn(col);
+        this->disks->insert(pair<string,Disk*>("Disk_"+to_string(i),d) );
+        cout<<"Disco "<<to_string(i)<<" creado\n"<<endl;
     }
     string dir="../Trees";
     DIR *rDir=opendir(dir.c_str());
@@ -88,6 +73,7 @@ void RAID_Controller::diskInitializer()
         this->trees=treesFetcher();
     }
     cout<<"Discos inicializados correctamente"<<endl;
+    diskVerifier();
 }
 
 bool RAID_Controller::dirCreator(const char* dir)
@@ -102,6 +88,8 @@ bool RAID_Controller::dirCreator(const char* dir)
 
 Compressor::Codified_File* RAID_Controller::imageDecomposer(string dir)
 {
+    this->comp=Compressor();
+    diskVerifier();
     vector<string> input;
     boost::split(input,dir, boost::is_any_of("."));
     ifstream ifs(dir, ios::binary|ios::ate);
@@ -112,7 +100,8 @@ Compressor::Codified_File* RAID_Controller::imageDecomposer(string dir)
     std::vector<char> data(buffer, buffer+int(pos));
     vector<string> inp;
     boost::split(inp,input[0], boost::is_any_of("/"));
-    Compressor::Codified_File* code=comp->compress(data,input.at(1),inp.at(1),dir);
+    Compressor::Codified_File* code=comp.compress(data,input.at(1),inp.at(1),dir);
+
     vector<Frag> f= parityCalculator(codigoteSplitter(code->getCodigote()));
     diskWriter(code,f);
     return code;
@@ -146,35 +135,47 @@ void RAID_Controller::imageSplitter(string dir, string name,int disk_n,int i)
 
 void RAID_Controller::diskWriter(Compressor::Codified_File* coded,vector<Frag> parity)
 {
+    int part=1;
+    int parityind=0;
     for(int i=0;i<4;i++)
     {
         if(i==c_disk)
         {
+            parityind=i;
             ofstream outT(this->disks->at("Disk_"+to_string(c_disk+1))->getAdress()+"/"+coded->getName()+"_Parity.txt",ios::out|ios::binary);
-            outT<<"Size:"+to_string(parity.at(i).getRealSize())<<endl;
-            outT<<parity.at(i).getFragment()<<endl;
-            FilePart* f= new FilePart(coded->getName()+"_Parity.txt",this->disks->at("Disk_"+to_string(c_disk+1))->getAdress()+"/"+coded->getName()+"_Parity.txt");
+            outT<<"Size:"+to_string(parity.at(3).getRealSize())<<endl;
+            outT<<parity.at(3).getFragment()<<endl;
+            FilePart* f= new FilePart(coded->getName()+"_Parity.txt",this->disks->at("Disk_"+to_string(c_disk+1))->getAdress()+"/"+coded->getName()+"_Parity.txt",coded->getName(),4);
             this->disks->at("Disk_"+to_string(c_disk+1))->getfileColumn()->emplace(std::pair<string,FilePart*>(coded->getName()+"_Parity.txt",f));
 
             ofstream outI(this->disks->at("Disk_"+to_string(c_disk+1))->getAdress()+"/"+coded->getName()+"_Info.txt",ios::out|ios::binary);
             outI<<"TotalSize:"+to_string(coded->getCodigote().size())<<endl;
-            FilePart* inf= new FilePart(coded->getName()+"_Info.txt",this->disks->at("Disk_"+to_string(c_disk+1))->getAdress()+"/"+coded->getName()+"_Info.txt");
+            FilePart* inf= new FilePart(coded->getName()+"_Info.txt",this->disks->at("Disk_"+to_string(c_disk+1))->getAdress()+"/"+coded->getName()+"_Info.txt",coded->getName(),0);
             this->disks->at("Disk_"+to_string(c_disk+1))->getfileColumn()->emplace(std::pair<string,FilePart*>(coded->getName()+"_Info.txt",inf));
 
 
         }
         else
         {
-            ofstream outT(this->disks->at("Disk_"+to_string(i+1))->getAdress()+"/"+coded->getName()+"_Part_"+to_string(i+1)+".txt",ios::out|ios::binary);
-            outT<<"Size:"+to_string(parity.at(i).getRealSize())<<endl;
-            outT<<parity.at(i).getFragment()<<endl;
-            FilePart* f= new FilePart(coded->getName()+"_Part_"+to_string(i+1)+".txt",this->disks->at("Disk_"+to_string(i+1))->getAdress()+"/"+coded->getName()+"_Part_"+to_string(i+1)+".txt");
-            std::pair<string,FilePart*> p(coded->getName()+"_Part_"+to_string(i+1)+".txt",f);
+            ofstream outT(this->disks->at("Disk_"+to_string(i+1))->getAdress()+"/"+coded->getName()+"_Part_"+to_string(part)+".txt",ios::out|ios::binary);
+            if(parityind!=0)
+            {
+                outT<<"Size:"+to_string(parity.at(parityind).getRealSize())<<endl;
+                outT<<parity.at(parityind).getFragment()<<endl;
+                parityind++;
+            }
+            else
+            {
+                outT<<"Size:"+to_string(parity.at(i).getRealSize())<<endl;
+                outT<<parity.at(i).getFragment()<<endl;
+            }
+            FilePart* f= new FilePart(coded->getName()+"_Part_"+to_string(part)+".txt",this->disks->at("Disk_"+to_string(i+1))->getAdress()+"/"+coded->getName()+"_Part_"+to_string(part)+".txt",coded->getName(),part);
+            std::pair<string,FilePart*> p(coded->getName()+"_Part_"+to_string(part)+".txt",f);
             this->disks->at("Disk_"+to_string(i+1))->getfileColumn()->emplace(p);
 
             ofstream outI(this->disks->at("Disk_"+to_string(i+1))->getAdress()+"/"+coded->getName()+"_Info.txt",ios::out|ios::binary);
             outI<<"TotalSize:"+to_string(coded->getCodigote().size())<<endl;
-            FilePart* inf= new FilePart(coded->getName()+"_Info.txt",this->disks->at("Disk_"+to_string(i+1))->getAdress()+"/"+coded->getName()+"_Info.txt");
+            FilePart* inf= new FilePart(coded->getName()+"_Info.txt",this->disks->at("Disk_"+to_string(i+1))->getAdress()+"/"+coded->getName()+"_Info.txt",coded->getName(),0);
             this->disks->at("Disk_"+to_string(i+1))->getfileColumn()->emplace(std::pair<string,FilePart*>(coded->getName()+"_Info.txt",inf));
             if(i>2)
             {
@@ -184,6 +185,7 @@ void RAID_Controller::diskWriter(Compressor::Codified_File* coded,vector<Frag> p
             {
                 imageSplitter("Incoming/"+coded->getName()+"."+coded->getExt(),coded->getName(),i+1,i);
             }
+            part++;
 
         }
     }
@@ -208,7 +210,7 @@ void RAID_Controller::diskWriter(Compressor::Codified_File* coded,vector<Frag> p
         it++;
     }
     outT.close();
-    FilePart* f= new FilePart(coded->getName()+"_Tree.txt","../Trees/"+coded->getName()+"_Tree.txt");
+    FilePart* f= new FilePart(coded->getName()+"_Tree.txt","../Trees/"+coded->getName()+"_Tree.txt",coded->getName(),0);
     this->trees->insert(pair<string,FilePart*>(coded->getName()+"_Tree.txt",f));
 }
 
@@ -269,14 +271,18 @@ vector<RAID_Controller::Frag> RAID_Controller::parityCalculator(vector<string> c
     char *act2=new char[max];
     char *act3=new char[max];
 
-    strncpy(act1, out.at(0).getFragment().c_str(), sizeof(act1));
-    strncpy(act2, out.at(1).getFragment().c_str(), sizeof(act2));
-    strncpy(act3, out.at(2).getFragment().c_str(), sizeof(act3));
+    strncpy(act1, out.at(0).getFragment().c_str(), max);
+    strncpy(act2, out.at(1).getFragment().c_str(), max);
+    strncpy(act3, out.at(2).getFragment().c_str(), max);
 
     for(int k=0;k<max;k++)
     {
-        char act[3]={act1[k],act2[k],act3[k]};
-        int mycount= count(act,act+2,'1');
+        string s="";
+        s+=act1[k];
+        s+=act2[k];
+        s+=act3[k];
+
+        int mycount= count(s.begin(),s.end(),'1');
         if(mycount==0||mycount==2)
         {
             parity+="0";
@@ -295,26 +301,138 @@ vector<RAID_Controller::Frag> RAID_Controller::parityCalculator(vector<string> c
 
 void RAID_Controller::diskVerifier()
 {
+    int cont = 0;
+    int disk = 0;
     for (int i = 1; i <= 4; i++)
     {
         DIR *rDir = opendir(("RAID/Disk_" + to_string(i)).c_str());
         if (rDir == nullptr)
         {
-            cout << "El disco " << to_string(i) << " no existe" << endl;
-            dirCreator(("RAID/Disk_" + to_string(i)).c_str());
-            reconstructDisk(i);
-            cout << "Disco " << to_string(i) << " reestablecido, iniciando reconstrucción\n" << endl;
+            disk=i;
+            cont++;
+        }
+        closedir(rDir);
+    }
+    if (cont > 1&& cont<4)
+    {
+        cout << "ERROR: Mas de un disco se ha dañado, no se puede continuar con la ejecucion :(" << endl;
+        throw std::exception();
+    }
+    else if(cont==4)
+    {
+        for(int i=0;i<this->disks->size();i++)
+        {
+            dirCreator(("RAID/Disk_"+to_string(i+1)).c_str());
         }
     }
-
+    else if (cont > 0)
+    {
+        cout << "El disco " << to_string(disk) << " se ha danado, iniciando reconstruccion..." << endl;
+        dirCreator(("RAID/Disk_"+to_string(disk)).c_str());
+        if (reconstructDisk(disk))
+        {
+            cout << "Disco " << to_string(disk) << " reestablecido correctamente\n" << endl;
+        }
+        else
+        {
+            cout << "Disco " << to_string(disk) << " no se ha podido reestablecer\n" << endl;
+            cout << "Finalizando ejecucion..." << endl;
+            throw std::exception();
+        }
+    }
 }
-void RAID_Controller::reconstructDisk(int number)
+bool RAID_Controller::reconstructDisk(int number)
 {
+    Disk* reference=this->disks->at("Disk_"+to_string(number));
+    Disk* antreference;
 
+    if(number==4)
+    {
+        antreference=this->disks->at("Disk_1");
+    }
+    else
+    {
+        antreference=this->disks->at("Disk_"+to_string(number+1));
+    }
+    if(reference->getfileColumn()->size()==0)
+    {
+        vector<FilePart*> goodFiles;
+        vector<FilePart*>currentParts;
+        vector<FilePart*>currentImgs;
+
+        vector<string> found;
+        for(int i=1;i<=4;i++)
+        {
+            for(auto const& imap:*this->disks->at("Disk_"+to_string(i))->getfileColumn())
+            {
+                goodFiles.push_back(this->disks->at("Disk_"+to_string(i))->getfileColumn()->at(imap.first));
+            }
+        }
+        for(int i=0;i<goodFiles.size();i++)
+        {
+            string searchingName=goodFiles.at(i)->getPureName();
+            if(std::find(found.begin(), found.end(), searchingName) == found.end())
+            {
+                for(int j=0;j<goodFiles.size();j++)
+                {
+                    string comparingName=goodFiles.at(j)->getPureName();
+                    string fileName=goodFiles.at(j)->getFileName();
+                    if(comparingName==searchingName&&(fileName.find("Part_") != std::string::npos||fileName.find("Parity") != std::string::npos))
+                    {
+                        currentParts.push_back(goodFiles.at(j));
+                    }
+                    else if(comparingName==searchingName&&fileName.find("ImgPt_") != std::string::npos)
+                    {
+                        currentImgs.push_back(goodFiles.at(j));
+                    }
+                }
+                vector<int>numbs={currentParts.at(0)->getpartNumb(),currentParts.at(1)->getpartNumb(),currentParts.at(2)->getpartNumb()};
+                int missing=0;
+                for(int i=1;i<=4;i++)
+                {
+                    if(std::find(numbs.begin(), numbs.end(),i) == numbs.end())
+                    {
+                        missing=i;
+                        break;
+                    }
+                }
+                if(missing!=0)
+                {
+                    FilePart* f= new FilePart(currentParts.at(0)->getPureName()+"_Part_"+to_string(missing)+".txt",reference->getAdress()+"/"+currentParts.at(0)->getPureName()+"_Part_"+to_string(missing)+".txt",currentParts.at(0)->getPureName(),missing);
+                    reference->getfileColumn()->emplace(pair<string,FilePart*>(f->getFileName(),f));
+                }
+                missing=0;
+                numbs={currentImgs.at(0)->getpartNumb()%10,currentImgs.at(1)->getpartNumb()%10};
+                for(int i=1;i<=3;i++)
+                {
+                    if(std::find(numbs.begin(), numbs.end(),i) == numbs.end())
+                    {
+                        missing=i;
+                        break;
+                    }
+                }
+                if(missing!=0)
+                {
+                    vector<string> input;
+                    string s=currentImgs.at(0)->getFileName();
+                    boost::split(input,s, boost::is_any_of("."));
+                    FilePart* f= new FilePart(currentImgs.at(0)->getPureName()+"_ImgPt_"+to_string(missing)+"."+input.at(1),reference->getAdress()+"/"+currentImgs.at(0)->getPureName()+"_ImgPt_"+to_string(missing)+"."+input.at(1),currentParts.at(0)->getPureName(),50+missing);
+                    reference->getfileColumn()->emplace(pair<string,FilePart*>(f->getFileName(),f));
+                }
+                currentParts={};
+                currentImgs={};
+                found.push_back(searchingName);
+            }
+        }
+
+    }
+    repair(reference,antreference);
+    return true;
 }
 
 map<string, Disk *> *RAID_Controller::getDisks()
 {
+
     return this->disks;
 }
 
@@ -330,8 +448,35 @@ map<string, FilePart *> *RAID_Controller::fileFetcher(string dir)
             if (string(dp->d_name) != "." && string(dp->d_name) != "..") {
                 string dp_name = string(dp->d_name);
                 vector<string> input;
-                FilePart *f= new FilePart(dp_name,dir+"/"+dp_name);
-                out->insert(pair<string,FilePart*>(dp_name,f));
+                boost::split(input,dp_name, boost::is_any_of("_"));
+                size_t n = std::count(dp_name.begin(), dp_name.end(), '_');
+                FilePart *f;
+                if(n==2)
+                {
+                    if (input.at(1) == "ImgPt")
+                    {
+                        f = new FilePart(dp_name, dir + "/" + dp_name, input.at(0), 5*10+stoi(input.at(2)));
+                        out->insert(pair<string, FilePart *>(dp_name, f));
+                    }
+                    else
+                    {
+                        f = new FilePart(dp_name, dir + "/" + dp_name, input.at(0), stoi(input.at(2)));
+                        out->insert(pair<string, FilePart *>(dp_name, f));
+                    }
+                }
+                else
+                {
+                    if(input.at(1)=="Info.txt")
+                    {
+                        f = new FilePart(dp_name, dir + "/" + dp_name, input.at(0), 0);
+                        out->insert(pair<string, FilePart *>(dp_name, f));
+                    }
+                    else if(input.at(1)=="Parity.txt")
+                    {
+                        f = new FilePart(dp_name, dir + "/" + dp_name, input.at(0), 4);
+                        out->insert(pair<string, FilePart *>(dp_name, f));
+                    }
+                }
             }
         }
     }
@@ -352,16 +497,130 @@ map<string, FilePart *> *RAID_Controller::treesFetcher()
             if (string(dp->d_name) != "." && string(dp->d_name) != "..") {
                 string dp_name = string(dp->d_name);
                 vector<string> input;
-                FilePart *f= new FilePart(dp_name,dir+"/"+dp_name);
+                boost::split(input,dp_name, boost::is_any_of("_"));
+                FilePart *f= new FilePart(dp_name,dir+"/"+dp_name,input.at(0),0);
                 out->insert(pair<string,FilePart*>(dp_name,f));
             }
         }
     }
     return out;
 }
+void RAID_Controller::diskVerifierT()
+{
+        thread diskT= thread(&RAID_Controller::diskVerifier,this);
+        diskT.detach();
+}
+
+void RAID_Controller::XORrecovery(FilePart *part,FilePart* info)
+{
+    vector<FilePart*> parts;
+    for(int i=0;i<this->disks->size();i++)
+    {
+        for(auto const& imap:*this->disks->at("Disk_"+to_string(i+1))->getfileColumn())
+        {
+            if(imap.second->getPureName()==part->getPureName()&&(imap.second->getFileName().find("Part_") != string::npos||imap.second->getFileName().find("Parity") != string::npos)&&imap.second->getpartNumb()!=part->getpartNumb())
+            {
+                parts.push_back(this->disks->at("Disk_"+to_string(i+1))->getfileColumn()->at(imap.first));
+            }
+        }
+
+    }
+    std::ifstream file(info->getFilePath());
+    std::string str;
+    getline(file,str);
+    vector<string> inp;
+    boost::split(inp,str,boost::is_any_of(":"));
+
+    int totalS=stoi(inp.at(1));
+    int p_size=totalS/3;
+    int extras=totalS%3;
+
+    int size1=p_size;
+    int size2=p_size;
+    int size3=p_size;
+
+    int arr[3]={size1,size2,size3};
+    while(extras>0)
+    {
+        for(int i=0;i<2;i++)
+        {
+            if(extras==0)
+            {
+                break;
+            }
+            arr[i]++;
+            extras--;
+        }
+    }
+    int realS=arr[part->getpartNumb()-1];
+    vector<string>codes;
+    for(int i=0;i<parts.size();i++)
+    {
+        std::ifstream file(parts.at(i)->getFilePath());
+        std::string str;
+        getline(file,str);
+        getline(file,str);
+        codes.push_back(str);
+    }
+    vector<RAID_Controller::Frag> frags=parityCalculator(codes);
+    ofstream outT(part->getFilePath());
+    outT<<"Size:"<<realS<<endl;
+    outT<<frags.at(3).getFragment()<<endl;
+
+}
+
+void RAID_Controller::repair(Disk* reference,Disk* antreference)
+{
+    vector<FilePart*> parts;
+    vector<FilePart*> parity;
+    vector<FilePart*> imgs;
+    FilePart* info;
+    for(auto const& imap:*reference->getfileColumn())
+    {
+        string name=imap.first;
+        if (name.find("Part_") != string::npos)
+        {
+            parts.push_back(reference->getfileColumn()->at(imap.first));
+        }
+        else if(name.find("Parity") != string::npos)
+        {
+            parity.push_back(reference->getfileColumn()->at(imap.first));
+        }
+        else if(name.find("ImgPt_") != string::npos)
+        {
+            imgs.push_back(reference->getfileColumn()->at(imap.first));
+        }
+
+    }
+    map<string,FilePart*> infoFile;
+    for(auto const& imap:*antreference->getfileColumn())
+    {
+        string name=imap.first;
+        info=antreference->getfileColumn()->at(name);
+        if(name.find("Info") != string::npos)
+        {
+            FilePart* inf= new FilePart(info->getFileName(),reference->getAdress()+"/"+info->getFileName(),info->getPureName(),info->getpartNumb());
+            string n=antreference->getfileColumn()->at(name)->getPureName();
+            infoFile.emplace(pair<string,FilePart*>(n,info));
+        }
+    }
+    for(auto const& imap:infoFile)
+    {
+        string name=imap.first;
+        for(int i=0;i<parts.size();i++)
+        {
+            if(parts.at(i)->getPureName()==name)
+            {
+                XORrecovery(parts.at(i),infoFile.at(name));
+            }
+        }
+    }
+}
 
 Compressor::Codified_File* RAID_Controller::merge(string name)
 {
+    diskVerifier();
+    this->comp=Compressor();
     vector<FilePart*> parts;
     for(int i=0;i<this->disks->size();i++)
     {
@@ -374,7 +633,7 @@ Compressor::Codified_File* RAID_Controller::merge(string name)
         }
     }
     string codigote;
-    int real_P=0;
+    vector<string*>str;
     for(int j=0;j<parts.size();j++)
     {
         if(boost::contains(parts.at(j)->getFileName(),"Part_"))
@@ -386,11 +645,12 @@ Compressor::Codified_File* RAID_Controller::merge(string name)
             getline(file,intr);
             boost::split(input,intr, boost::is_any_of(":"));
             getline(file,intr);
-            codigote+=intr.substr(0,stoi(input.at(1)));
-            real_P++;
+
+            string* s= new string(intr.substr(0,stoi(input.at(1))));
+            str.push_back(s);
         }
     }
-    int p=codigote.size();
+    codigote=*str.at(0)+*str.at(1)+*str.at(2);
     string dirTree;
     for(int k=0;k<this->trees->size();k++)
     {
@@ -398,11 +658,11 @@ Compressor::Codified_File* RAID_Controller::merge(string name)
         {
             if(boost::contains(imap.first,name))
             {
-               dirTree=imap.second->getFilePath();
-               break;
+                dirTree=imap.second->getFilePath();
+                break;
             }
         }
     }
-    Compressor::Codified_File* c= this->comp->treeReconstructor(dirTree,codigote);
+    Compressor::Codified_File* c= this->comp.treeReconstructor(dirTree,codigote);
     return c;
 }

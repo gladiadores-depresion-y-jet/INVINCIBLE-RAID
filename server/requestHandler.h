@@ -14,6 +14,8 @@ using namespace Pistache;
 using nlohmann::json;
 
 class requestHandler: public Http::Handler {
+private:
+
 public:
 
 HTTP_PROTOTYPE(requestHandler);
@@ -32,6 +34,8 @@ HTTP_PROTOTYPE(requestHandler);
                  * var valor = jsonRequest[nomDeLaLlave]
                  */
 
+                std::string temp = jsonRequest["imagen"];
+                std::string id = jsonRequest["id"];
                 // TODO aqui debe estar logica del insert
 
 
@@ -66,22 +70,6 @@ HTTP_PROTOTYPE(requestHandler);
                  */
 
                 // TODO aqui debe estar logica del update
-
-                // TODO definir respuesta
-                response.send(Pistache::Http::Code::Ok, jsonRequest.dump(4));
-            }
-
-            else if (request.resource() == "/DELETE") {
-                datos = request.body();
-
-                auto jsonRequest = json::parse(datos);
-
-                /*
-                 * Para accesar a parametros del json seria:
-                 * var valor = jsonRequest[nomDeLaLlave]
-                 */
-
-                // TODO aqui debe estar logica del delete
 
                 // TODO definir respuesta
                 response.send(Pistache::Http::Code::Ok, jsonRequest.dump(4));
