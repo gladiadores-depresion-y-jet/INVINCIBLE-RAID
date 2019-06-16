@@ -58,6 +58,10 @@ class Compressor
                 this->name=nam;
                 this->origin=org;
             }
+            Codified_File()
+            {
+                this->codigote="-1";
+            }
             string getCodigote()
             {
                 return this->codigote;
@@ -159,6 +163,8 @@ class Compressor
         Codified_File* treeReconstructor(string dirTree, string codigote);
         void writeToDiskDecomp(Decodified_File* dec);
         bool compare(Codified_File* org,Codified_File* t);
+
+    string getImage(Decodified_File *pFile);
 };
 
 

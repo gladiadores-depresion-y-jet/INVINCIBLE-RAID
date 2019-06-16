@@ -12,31 +12,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce78ecc8-1404-4b3d-8145-787670d947d3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Huffman_Compressor/Compressor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Huffman_Compressor/Compressor.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Huffman_Compressor/Compressor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Huffman_Compressor/Compressor.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Main/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RAID/RAID_Controller.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/RAID/RAID_Controller.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RAID/RAID_Controller.h" beforeDir="false" afterPath="$PROJECT_DIR$/RAID/RAID_Controller.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeError.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/Huffman_Compressor/Compressor.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/Huffman_Compressor/Compressor.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/Huffman_Compressor/Huffman_Node.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/Huffman_Compressor/Huffman_Node.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/Huffman_Compressor/Huffman_Tree.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/Huffman_Compressor/Huffman_Tree.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/Main/main.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/RAID/RAID_Controller.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Outport/Prueba.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Outport/Prueba5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RAID/Disk_1/Prueba5_Part_1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RAID/Disk_1/Prueba_Part_1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RAID/Disk_2/Prueba5_ImgPt_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RAID/Disk_2/Prueba5_Info.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RAID/Disk_2/Prueba5_Part_2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RAID/Disk_2/Prueba_ImgPt_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RAID/Disk_2/Prueba_Info.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RAID/Disk_2/Prueba_Part_2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RAID/Disk_3/Prueba5_Info.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RAID/Disk_3/Prueba5_Parity.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RAID/Disk_3/Prueba_ImgPt_3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RAID/Disk_3/Prueba_Info.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RAID/Disk_3/Prueba_Part_3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RAID/Disk_4/Prueba5_ImgPt_3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RAID/Disk_4/Prueba5_Info.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RAID/Disk_4/Prueba5_Part_3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RAID/Disk_4/Prueba_Info.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RAID/Disk_4/Prueba_Parity.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/RAID/Disk.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/RAID/Disk.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/RAID/FilePart.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/RAID/FilePart.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/RAID/RAID_Controller.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/RAID/RAID_Controller.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/Structures/Matrix.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/Structures/Matrix.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RAID_5.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RAID_5" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/RAID_5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RAID_5.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/RAID_5.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/requestHandler.h" beforeDir="false" afterPath="$PROJECT_DIR$/server/requestHandler.h" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -71,8 +78,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Main/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16">
-              <caret line="31" column="66" lean-forward="true" selection-start-line="31" selection-start-column="66" selection-end-line="31" selection-end-column="66" />
+            <state relative-caret-position="-62">
+              <caret line="14" column="2" selection-start-line="14" selection-end-line="15" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/requestHandler.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="73">
+              <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -80,10 +96,31 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RAID/RAID_Controller.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="123" column="5" selection-start-line="123" selection-start-column="5" selection-end-line="123" selection-end-column="5" />
+            <state relative-caret-position="74">
+              <caret line="732" column="50" selection-start-line="732" selection-start-column="50" selection-end-line="732" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Huffman_Compressor/Compressor.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1275">
+              <caret line="85" column="15" selection-start-line="85" selection-start-column="15" selection-end-line="85" selection-end-column="15" />
               <folding>
-                <element signature="e#48#66#0" expanded="true" />
+                <element signature="e#150#181#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Huffman_Compressor/Compressor.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="479">
+              <caret line="227" selection-start-line="227" selection-end-line="227" />
+              <folding>
+                <element signature="e#48#68#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -93,7 +130,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>write</find>
       <find>input</find>
       <find>pari</find>
       <find>parit</find>
@@ -123,6 +159,7 @@
       <find>boost</find>
       <find>imageS</find>
       <find>parityC</find>
+      <find>write</find>
     </findStrings>
     <replaceStrings>
       <replace>list-&gt;</replace>
@@ -155,19 +192,20 @@
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/RAID/Disk.h" />
         <option value="$PROJECT_DIR$/RAID/Disk.cpp" />
-        <option value="$PROJECT_DIR$/server/requestHandler.h" />
         <option value="$PROJECT_DIR$/RAID/FilePart.h" />
         <option value="$PROJECT_DIR$/RAID/FilePart.cpp" />
+        <option value="$PROJECT_DIR$/RAID/RAID_Controller.h" />
         <option value="$PROJECT_DIR$/Huffman_Compressor/Compressor.h" />
         <option value="$PROJECT_DIR$/Huffman_Compressor/Compressor.cpp" />
-        <option value="$PROJECT_DIR$/RAID/RAID_Controller.h" />
+        <option value="$PROJECT_DIR$/server/requestHandler.h" />
         <option value="$PROJECT_DIR$/RAID/RAID_Controller.cpp" />
         <option value="$PROJECT_DIR$/Main/main.cpp" />
       </list>
     </option>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="683" />
     <option name="y" value="27" />
     <option name="width" value="683" />
     <option name="height" value="741" />
@@ -178,38 +216,23 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="RAID_5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RAID_5" type="462c0819:PsiDirectoryNode" />
+              <item name="Temp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="RAID_5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RAID_5" type="462c0819:PsiDirectoryNode" />
-              <item name="Huffman_Compressor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RAID_5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RAID_5" type="462c0819:PsiDirectoryNode" />
-              <item name="Main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RAID_5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RAID_5" type="462c0819:PsiDirectoryNode" />
-              <item name="RAID" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RAID_5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RAID_5" type="462c0819:PsiDirectoryNode" />
+              <item name="Temp" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -288,11 +311,13 @@
       <workItem from="1560378602669" duration="37864000" />
       <workItem from="1560461339260" duration="7346000" />
       <workItem from="1560469565701" duration="30645000" />
+      <workItem from="1560624065444" duration="3991000" />
+      <workItem from="1560659670792" duration="1496000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="287542000" />
+    <option name="totallyTimeSpent" value="293029000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -307,13 +332,13 @@
     <frame x="0" y="27" width="1366" height="741" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49609375" weight="0.20454545" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49609375" weight="0.20378788" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.50390625" side_tool="true" weight="0.7643939" />
       <window_info anchor="bottom" id="Messages" order="0" sideWeight="0.49924242" weight="0.8330579" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" sideWeight="0.49924242" weight="0.3289256" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.49924242" visible="true" weight="0.7801653" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49924242" weight="0.57355374" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Debug" order="6" weight="0.54545456" />
@@ -329,35 +354,34 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.022411954" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49609375" visible="true" weight="0.20378788" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" sideWeight="0.50390625" side_tool="true" weight="0.7643939" />
+      <window_info anchor="bottom" id="Messages" order="0" sideWeight="0.49924242" weight="0.8330579" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" sideWeight="0.49924242" weight="0.3289256" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49924242" visible="true" weight="0.7801653" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="6" weight="0.54545456" />
+      <window_info anchor="bottom" id="TODO" order="7" weight="0.3289256" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3289256" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007576" side_tool="true" weight="0.6479339" />
+      <window_info anchor="bottom" id="Version Control" order="11" />
+      <window_info anchor="bottom" id="CMake" order="12" weight="0.32454696" />
+      <window_info anchor="bottom" id="Inspection Results" order="13" weight="0.3293348" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" weight="0.022411954" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Main/main.cpp</url>
-          <line>26</line>
-          <option name="timeStamp" value="333" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/RAID/RAID_Controller.cpp</url>
-          <line>712</line>
-          <option name="timeStamp" value="337" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/RAID/RAID_Controller.cpp</url>
-          <line>361</line>
-          <option name="timeStamp" value="338" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/RAID/RAID_Controller.cpp</url>
-          <line>411</line>
-          <option name="timeStamp" value="339" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
         <watch expression="s" />
@@ -452,13 +476,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/requestHandler.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="17" column="4" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RAID/Disk.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -497,27 +514,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/include/c++/7/ext/new_allocator.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="135" selection-start-line="135" selection-end-line="135" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RAID/FilePart.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Huffman_Compressor/Compressor.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="200" selection-start-line="200" selection-end-line="200" />
-          <folding>
-            <element signature="e#48#68#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -552,16 +552,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Huffman_Compressor/Compressor.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="74" selection-start-line="74" selection-end-line="74" />
-          <folding>
-            <element signature="e#150#181#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/include/c++/7/bits/stl_vector.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
@@ -583,20 +573,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Huffman_Compressor/Compressor.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="85" column="15" selection-start-line="85" selection-start-column="15" selection-end-line="85" selection-end-column="15" />
+          <folding>
+            <element signature="e#150#181#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/requestHandler.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/7/ext/new_allocator.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="135" selection-start-line="135" selection-end-line="135" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Huffman_Compressor/Compressor.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479">
+          <caret line="227" selection-start-line="227" selection-end-line="227" />
+          <folding>
+            <element signature="e#48#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/RAID/RAID_Controller.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="123" column="5" selection-start-line="123" selection-start-column="5" selection-end-line="123" selection-end-column="5" />
-          <folding>
-            <element signature="e#48#66#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="74">
+          <caret line="732" column="50" selection-start-line="732" selection-start-column="50" selection-end-line="732" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Main/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="31" column="66" lean-forward="true" selection-start-line="31" selection-start-column="66" selection-end-line="31" selection-end-column="66" />
+        <state relative-caret-position="-62">
+          <caret line="14" column="2" selection-start-line="14" selection-end-line="15" selection-end-column="42" />
         </state>
       </provider>
     </entry>

@@ -81,6 +81,8 @@ class RAID_Controller
         void repair(Disk* reference,Disk* antreference);
         Compressor::Codified_File* merge(string name);
         void imageRestore(FilePart* img,int diskN);
+
+    string getImage(string id);
 };
 
 

@@ -380,6 +380,11 @@ void Compressor::writeToDiskDecomp(Compressor::Decodified_File *DecFile)
     delete(DecFile);
 }
 
+string Compressor::getImage(Compressor::Decodified_File *pFile) {
+
+}
+
+
 
 
 

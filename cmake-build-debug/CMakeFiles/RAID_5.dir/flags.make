@@ -6,5 +6,5 @@ CXX_FLAGS =  -std=c++11 -g   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/dcamachog1501/Induced_Desktop/RAID_5 -isystem /usr/local/include/opencv 
+CXX_INCLUDES = -I/home/dcamachog1501/Escritorio/Temp -isystem /usr/local/include/opencv 
 

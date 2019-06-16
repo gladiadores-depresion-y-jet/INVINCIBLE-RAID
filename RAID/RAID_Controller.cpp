@@ -691,6 +691,11 @@ Compressor::Codified_File* RAID_Controller::merge(string name)
             str.push_back(s);
         }
     }
+    if(str.empty())
+    {
+        Compressor::Codified_File* c= new Compressor::Codified_File();
+        return c;
+    }
     codigote=*str.at(0)+*str.at(1)+*str.at(2);
     string dirTree;
     for(int k=0;k<this->trees->size();k++)
@@ -721,4 +726,20 @@ void RAID_Controller::imageRestore(FilePart* img,int diskN)
     imageSplitter("Outport/"+img->getPureName()+"."+input.at(1),img->getPureName(),diskN,imgN-1);
     remove(("Outport/"+img->getPureName()+"."+input.at(1)).c_str());
 
+}
+string RAID_Controller::getImage(string id)
+{
+    vector<string> input;
+    boost::split(input,id, boost::is_any_of("."));
+
+    Compressor::Codified_File* f=merge(input.at(0)+"_");
+    if(f->getCodigote()=="-1")
+    {
+        return "false";
+    }
+    Compressor::Decodified_File* dec=comp->decompress(f);
+    vector<char>v=dec->getDigits();
+    std::string out(v.begin(), v.end());
+    cout<<"Done!"<<endl;
+    return out;
 }

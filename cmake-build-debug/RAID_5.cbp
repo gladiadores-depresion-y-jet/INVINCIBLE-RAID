@@ -8,33 +8,33 @@
 		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\share\;CMake Files\..\..\..\..\usr\local\share\OpenCV\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/dcamachog1501/Induced_Desktop/RAID_5/cmake-build-debug"/>
+				<Option working_dir="/home/dcamachog1501/Escritorio/Temp/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Induced_Desktop/RAID_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Induced_Desktop/RAID_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Induced_Desktop/RAID_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Induced_Desktop/RAID_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Escritorio/Temp/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Escritorio/Temp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Escritorio/Temp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Escritorio/Temp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/dcamachog1501/Induced_Desktop/RAID_5/cmake-build-debug"/>
+				<Option working_dir="/home/dcamachog1501/Escritorio/Temp/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Induced_Desktop/RAID_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Induced_Desktop/RAID_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Induced_Desktop/RAID_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Induced_Desktop/RAID_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Escritorio/Temp/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Escritorio/Temp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Escritorio/Temp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Escritorio/Temp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="RAID_5">
-				<Option output="/home/dcamachog1501/Induced_Desktop/RAID_5/cmake-build-debug/RAID_5" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/dcamachog1501/Induced_Desktop/RAID_5/cmake-build-debug"/>
+				<Option output="/home/dcamachog1501/Escritorio/Temp/cmake-build-debug/RAID_5" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/dcamachog1501/Escritorio/Temp/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/dcamachog1501/Induced_Desktop/RAID_5"/>
+					<Add directory="/home/dcamachog1501/Escritorio/Temp"/>
 					<Add directory="/usr/local/include/opencv"/>
 					<Add directory="/usr/include/c++/7"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
@@ -46,20 +46,20 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Induced_Desktop/RAID_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 RAID_5"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Induced_Desktop/RAID_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Induced_Desktop/RAID_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Induced_Desktop/RAID_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Escritorio/Temp/cmake-build-debug/Makefile&quot;  VERBOSE=1 RAID_5"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Escritorio/Temp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Escritorio/Temp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Escritorio/Temp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="RAID_5/fast">
-				<Option output="/home/dcamachog1501/Induced_Desktop/RAID_5/cmake-build-debug/RAID_5" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/dcamachog1501/Induced_Desktop/RAID_5/cmake-build-debug"/>
+				<Option output="/home/dcamachog1501/Escritorio/Temp/cmake-build-debug/RAID_5" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/dcamachog1501/Escritorio/Temp/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/dcamachog1501/Induced_Desktop/RAID_5"/>
+					<Add directory="/home/dcamachog1501/Escritorio/Temp"/>
 					<Add directory="/usr/local/include/opencv"/>
 					<Add directory="/usr/include/c++/7"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
@@ -71,90 +71,90 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Induced_Desktop/RAID_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 RAID_5/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Induced_Desktop/RAID_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Induced_Desktop/RAID_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Induced_Desktop/RAID_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Escritorio/Temp/cmake-build-debug/Makefile&quot;  VERBOSE=1 RAID_5/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Escritorio/Temp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Escritorio/Temp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Escritorio/Temp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/dcamachog1501/Induced_Desktop/RAID_5/cmake-build-debug"/>
+				<Option working_dir="/home/dcamachog1501/Escritorio/Temp/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Induced_Desktop/RAID_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Induced_Desktop/RAID_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Induced_Desktop/RAID_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Induced_Desktop/RAID_5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Escritorio/Temp/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Escritorio/Temp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Escritorio/Temp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dcamachog1501/Escritorio/Temp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/dcamachog1501/Induced_Desktop/RAID_5/Huffman_Compressor/Compressor.cpp">
+		<Unit filename="/home/dcamachog1501/Escritorio/Temp/Huffman_Compressor/Compressor.cpp">
 			<Option target="RAID_5"/>
 		</Unit>
-		<Unit filename="/home/dcamachog1501/Induced_Desktop/RAID_5/Huffman_Compressor/Compressor.h">
+		<Unit filename="/home/dcamachog1501/Escritorio/Temp/Huffman_Compressor/Compressor.h">
 			<Option target="RAID_5"/>
 		</Unit>
-		<Unit filename="/home/dcamachog1501/Induced_Desktop/RAID_5/Huffman_Compressor/Huffman_Node.cpp">
+		<Unit filename="/home/dcamachog1501/Escritorio/Temp/Huffman_Compressor/Huffman_Node.cpp">
 			<Option target="RAID_5"/>
 		</Unit>
-		<Unit filename="/home/dcamachog1501/Induced_Desktop/RAID_5/Huffman_Compressor/Huffman_Node.h">
+		<Unit filename="/home/dcamachog1501/Escritorio/Temp/Huffman_Compressor/Huffman_Node.h">
 			<Option target="RAID_5"/>
 		</Unit>
-		<Unit filename="/home/dcamachog1501/Induced_Desktop/RAID_5/Huffman_Compressor/Huffman_Tree.cpp">
+		<Unit filename="/home/dcamachog1501/Escritorio/Temp/Huffman_Compressor/Huffman_Tree.cpp">
 			<Option target="RAID_5"/>
 		</Unit>
-		<Unit filename="/home/dcamachog1501/Induced_Desktop/RAID_5/Huffman_Compressor/Huffman_Tree.h">
+		<Unit filename="/home/dcamachog1501/Escritorio/Temp/Huffman_Compressor/Huffman_Tree.h">
 			<Option target="RAID_5"/>
 		</Unit>
-		<Unit filename="/home/dcamachog1501/Induced_Desktop/RAID_5/Main/main.cpp">
+		<Unit filename="/home/dcamachog1501/Escritorio/Temp/Main/main.cpp">
 			<Option target="RAID_5"/>
 		</Unit>
-		<Unit filename="/home/dcamachog1501/Induced_Desktop/RAID_5/RAID/Disk.cpp">
+		<Unit filename="/home/dcamachog1501/Escritorio/Temp/RAID/Disk.cpp">
 			<Option target="RAID_5"/>
 		</Unit>
-		<Unit filename="/home/dcamachog1501/Induced_Desktop/RAID_5/RAID/Disk.h">
+		<Unit filename="/home/dcamachog1501/Escritorio/Temp/RAID/Disk.h">
 			<Option target="RAID_5"/>
 		</Unit>
-		<Unit filename="/home/dcamachog1501/Induced_Desktop/RAID_5/RAID/FilePart.cpp">
+		<Unit filename="/home/dcamachog1501/Escritorio/Temp/RAID/FilePart.cpp">
 			<Option target="RAID_5"/>
 		</Unit>
-		<Unit filename="/home/dcamachog1501/Induced_Desktop/RAID_5/RAID/FilePart.h">
+		<Unit filename="/home/dcamachog1501/Escritorio/Temp/RAID/FilePart.h">
 			<Option target="RAID_5"/>
 		</Unit>
-		<Unit filename="/home/dcamachog1501/Induced_Desktop/RAID_5/RAID/RAID_Controller.cpp">
+		<Unit filename="/home/dcamachog1501/Escritorio/Temp/RAID/RAID_Controller.cpp">
 			<Option target="RAID_5"/>
 		</Unit>
-		<Unit filename="/home/dcamachog1501/Induced_Desktop/RAID_5/RAID/RAID_Controller.h">
+		<Unit filename="/home/dcamachog1501/Escritorio/Temp/RAID/RAID_Controller.h">
 			<Option target="RAID_5"/>
 		</Unit>
-		<Unit filename="/home/dcamachog1501/Induced_Desktop/RAID_5/Structures/List.h">
+		<Unit filename="/home/dcamachog1501/Escritorio/Temp/Structures/List.h">
 			<Option target="RAID_5"/>
 		</Unit>
-		<Unit filename="/home/dcamachog1501/Induced_Desktop/RAID_5/Structures/Matrix.cpp">
+		<Unit filename="/home/dcamachog1501/Escritorio/Temp/Structures/Matrix.cpp">
 			<Option target="RAID_5"/>
 		</Unit>
-		<Unit filename="/home/dcamachog1501/Induced_Desktop/RAID_5/Structures/Matrix.h">
+		<Unit filename="/home/dcamachog1501/Escritorio/Temp/Structures/Matrix.h">
 			<Option target="RAID_5"/>
 		</Unit>
-		<Unit filename="/home/dcamachog1501/Induced_Desktop/RAID_5/Structures/Node.h">
+		<Unit filename="/home/dcamachog1501/Escritorio/Temp/Structures/Node.h">
 			<Option target="RAID_5"/>
 		</Unit>
-		<Unit filename="/home/dcamachog1501/Induced_Desktop/RAID_5/server/requestHandler.h">
+		<Unit filename="/home/dcamachog1501/Escritorio/Temp/server/requestHandler.h">
 			<Option target="RAID_5"/>
 		</Unit>
-		<Unit filename="/home/dcamachog1501/Induced_Desktop/RAID_5/CMakeLists.txt">
+		<Unit filename="/home/dcamachog1501/Escritorio/Temp/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/home/dcamachog1501/Induced_Desktop/RAID_5/../../../../usr/local/share/OpenCV/OpenCVConfig-version.cmake">
+		<Unit filename="/home/dcamachog1501/Escritorio/Temp/../../../../usr/local/share/OpenCV/OpenCVConfig-version.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\share\OpenCV\"/>
 		</Unit>
-		<Unit filename="/home/dcamachog1501/Induced_Desktop/RAID_5/../../../../usr/local/share/OpenCV/OpenCVConfig.cmake">
+		<Unit filename="/home/dcamachog1501/Escritorio/Temp/../../../../usr/local/share/OpenCV/OpenCVConfig.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\share\OpenCV\"/>
 		</Unit>
-		<Unit filename="/home/dcamachog1501/Induced_Desktop/RAID_5/../../../../usr/local/share/OpenCV/OpenCVModules-release.cmake">
+		<Unit filename="/home/dcamachog1501/Escritorio/Temp/../../../../usr/local/share/OpenCV/OpenCVModules-release.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\share\OpenCV\"/>
 		</Unit>
-		<Unit filename="/home/dcamachog1501/Induced_Desktop/RAID_5/../../../../usr/local/share/OpenCV/OpenCVModules.cmake">
+		<Unit filename="/home/dcamachog1501/Escritorio/Temp/../../../../usr/local/share/OpenCV/OpenCVModules.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\share\OpenCV\"/>
 		</Unit>
 	</Project>

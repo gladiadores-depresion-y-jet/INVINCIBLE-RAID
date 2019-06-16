@@ -970,27 +970,27 @@ iostream
 sstream
 -
 
-/home/dcamachog1501/Induced_Desktop/RAID_5/Huffman_Compressor/Compressor.h
+/home/dcamachog1501/Escritorio/Temp/Huffman_Compressor/Compressor.h
 vector
 -
 Huffman_Node.h
-/home/dcamachog1501/Induced_Desktop/RAID_5/Huffman_Compressor/Huffman_Node.h
+/home/dcamachog1501/Escritorio/Temp/Huffman_Compressor/Huffman_Node.h
 ../Structures/List.h
-/home/dcamachog1501/Induced_Desktop/RAID_5/Structures/List.h
+/home/dcamachog1501/Escritorio/Temp/Structures/List.h
 ../RAID/Disk.h
-/home/dcamachog1501/Induced_Desktop/RAID_5/RAID/Disk.h
+/home/dcamachog1501/Escritorio/Temp/RAID/Disk.h
 Huffman_Tree.h
-/home/dcamachog1501/Induced_Desktop/RAID_5/Huffman_Compressor/Huffman_Tree.h
+/home/dcamachog1501/Escritorio/Temp/Huffman_Compressor/Huffman_Tree.h
 map
 -
 
-/home/dcamachog1501/Induced_Desktop/RAID_5/Huffman_Compressor/Huffman_Node.h
+/home/dcamachog1501/Escritorio/Temp/Huffman_Compressor/Huffman_Node.h
 
-/home/dcamachog1501/Induced_Desktop/RAID_5/Huffman_Compressor/Huffman_Tree.h
+/home/dcamachog1501/Escritorio/Temp/Huffman_Compressor/Huffman_Tree.h
 Huffman_Node.h
-/home/dcamachog1501/Induced_Desktop/RAID_5/Huffman_Compressor/Huffman_Node.h
+/home/dcamachog1501/Escritorio/Temp/Huffman_Compressor/Huffman_Node.h
 
-/home/dcamachog1501/Induced_Desktop/RAID_5/Main/main.cpp
+/home/dcamachog1501/Escritorio/Temp/Main/main.cpp
 bits/stdc++.h
 -
 iostream
@@ -1000,31 +1000,31 @@ sys/stat.h
 sys/types.h
 -
 ../RAID/RAID_Controller.h
-/home/dcamachog1501/Induced_Desktop/RAID_5/RAID/RAID_Controller.h
+/home/dcamachog1501/Escritorio/Temp/RAID/RAID_Controller.h
 ../Huffman_Compressor/Compressor.h
-/home/dcamachog1501/Induced_Desktop/RAID_5/Huffman_Compressor/Compressor.h
+/home/dcamachog1501/Escritorio/Temp/Huffman_Compressor/Compressor.h
 server/requestHandler.h
-/home/dcamachog1501/Induced_Desktop/RAID_5/Main/server/requestHandler.h
+/home/dcamachog1501/Escritorio/Temp/Main/server/requestHandler.h
 pistache/endpoint.h
 -
 
-/home/dcamachog1501/Induced_Desktop/RAID_5/RAID/Disk.h
+/home/dcamachog1501/Escritorio/Temp/RAID/Disk.h
 FilePart.h
-/home/dcamachog1501/Induced_Desktop/RAID_5/RAID/FilePart.h
+/home/dcamachog1501/Escritorio/Temp/RAID/FilePart.h
 map
 -
 iostream
 -
 
-/home/dcamachog1501/Induced_Desktop/RAID_5/RAID/FilePart.h
+/home/dcamachog1501/Escritorio/Temp/RAID/FilePart.h
 string
 -
 
-/home/dcamachog1501/Induced_Desktop/RAID_5/RAID/RAID_Controller.h
+/home/dcamachog1501/Escritorio/Temp/RAID/RAID_Controller.h
 ../Structures/List.h
-/home/dcamachog1501/Induced_Desktop/RAID_5/Structures/List.h
+/home/dcamachog1501/Escritorio/Temp/Structures/List.h
 ../Huffman_Compressor/Compressor.h
-/home/dcamachog1501/Induced_Desktop/RAID_5/Huffman_Compressor/Compressor.h
+/home/dcamachog1501/Escritorio/Temp/Huffman_Compressor/Compressor.h
 dirent.h
 -
 iostream
@@ -1046,21 +1046,21 @@ opencv2/core/core.hpp
 opencv2/imgproc/imgproc.hpp
 -
 ../Structures/Node.h
-/home/dcamachog1501/Induced_Desktop/RAID_5/Structures/Node.h
+/home/dcamachog1501/Escritorio/Temp/Structures/Node.h
 Disk.h
-/home/dcamachog1501/Induced_Desktop/RAID_5/RAID/Disk.h
+/home/dcamachog1501/Escritorio/Temp/RAID/Disk.h
 boost/algorithm/string.hpp
-/home/dcamachog1501/Induced_Desktop/RAID_5/RAID/boost/algorithm/string.hpp
+/home/dcamachog1501/Escritorio/Temp/RAID/boost/algorithm/string.hpp
 thread
 -
 cstdio
 -
 
-/home/dcamachog1501/Induced_Desktop/RAID_5/Structures/List.h
+/home/dcamachog1501/Escritorio/Temp/Structures/List.h
 Node.h
-/home/dcamachog1501/Induced_Desktop/RAID_5/Structures/Node.h
+/home/dcamachog1501/Escritorio/Temp/Structures/Node.h
 iostream
 -
 
-/home/dcamachog1501/Induced_Desktop/RAID_5/Structures/Node.h
+/home/dcamachog1501/Escritorio/Temp/Structures/Node.h
 
