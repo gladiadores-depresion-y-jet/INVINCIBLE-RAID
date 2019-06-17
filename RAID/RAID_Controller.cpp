@@ -106,12 +106,6 @@ Compressor::Codified_File* RAID_Controller::imageDecomposer(string dir)
     return code;
 }
 
-void RAID_Controller::compose(Compressor::Decodified_File *DecFile)
-{
-    ofstream outfile(DecFile->getName()+"_New."+DecFile->getExt(), ios::out | ios::binary);
-    outfile.write(&DecFile->getDigits()[0], DecFile->getDigits().size());
-}
-
 void RAID_Controller::imageSplitter(string dir, string name,int disk_n,int i)
 {
     Mat image =imread(dir);
@@ -441,12 +435,6 @@ bool RAID_Controller::reconstructDisk(int number)
     return true;
 }
 
-map<string, Disk *> *RAID_Controller::getDisks()
-{
-
-    return this->disks;
-}
-
 map<string, FilePart *> *RAID_Controller::fileFetcher(string dir)
 {
     map<string,FilePart*>* out= new map<string,FilePart*>();
@@ -515,11 +503,6 @@ map<string, FilePart *> *RAID_Controller::treesFetcher()
         }
     }
     return out;
-}
-void RAID_Controller::diskVerifierT()
-{
-        thread diskT= thread(&RAID_Controller::diskVerifier,this);
-        diskT.detach();
 }
 
 void RAID_Controller::XORrecovery(FilePart *part,FilePart* info)

@@ -22,12 +22,6 @@ int Disk::getDiskN()
 {
     return this->diskN;
 }
-
-int Disk::getFileN()
-{
-    return (this->regfileN+this->parityN);
-}
-
 map<string,FilePart *> *Disk::getfileColumn()
 {
     return this->fileColumn;

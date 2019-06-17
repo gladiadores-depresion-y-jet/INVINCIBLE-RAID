@@ -19,10 +19,17 @@ private:
     map <string,FilePart*>* fileColumn;
 
 public:
+    /**
+     * Constructor alternativo de la clase Disk.
+     * @param dNumb Numero de disco.
+     * @param adr Direccion del disco.
+     */
     Disk(int dNumb,string adr);
+    /**
+     * Constructor estandar de la clase Disk.
+     */
     Disk();
     int getDiskN();
-    int getFileN();
     map<string,FilePart*>* getfileColumn();
     void setFileColumn(map<string,FilePart*>*);
     string getAdress();

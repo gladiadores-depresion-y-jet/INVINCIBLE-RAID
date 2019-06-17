@@ -29,7 +29,3 @@ int FilePart::getpartNumb()
     return this->partNumb;
 }
 
-void FilePart::setPath(string dir)
-{
-    this->path=dir;
-}

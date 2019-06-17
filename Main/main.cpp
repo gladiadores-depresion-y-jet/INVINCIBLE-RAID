@@ -12,9 +12,10 @@ using namespace std;
 using namespace cv;
 int main()
 {
-/*    RAID_Controller *r = new RAID_Controller();
+    /*RAID_Controller *r = new RAID_Controller();
     Compressor* comp = new Compressor();*/
-    /*Compressor::Codified_File* T1=r->imageDecomposer("Incoming/Prueba.jpeg");
+    /*Compressor::Codified_File* T0=r->imageDecomposer("Incoming/Prueba.jpg");
+    Compressor::Codified_File* T1=r->imageDecomposer("Incoming/Prueba.jpeg");
     Compressor::Codified_File* T2=r->imageDecomposer("Incoming/Prueba2.jpg");
     Compressor::Codified_File* T3=r->imageDecomposer("Incoming/Prueba3.jpg");
     Compressor::Codified_File* T4=r->imageDecomposer("Incoming/Prueba4.jpg");

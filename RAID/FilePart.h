@@ -16,12 +16,22 @@ class FilePart
         string filename;
         string path;
     public:
+        /**
+         * Constructor de la clase FilePart
+         * @param fNam Nombre del archivo.
+         * @param path Path a la imagen en el disco.
+         * @param pn Nombre del archivo sin extension.
+         * @param pr Numero de parte.
+         */
         FilePart(string fNam,string path,string pn,int pr);
+        /**
+         *
+         * @return
+         */
         string getFileName();
         string getFilePath();
         string getPureName();
         int getpartNumb();
-        void setPath(string dir);
 
 };
 

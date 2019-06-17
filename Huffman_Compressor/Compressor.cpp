@@ -115,27 +115,16 @@ List<Huffman_Node*>* Compressor::sort(List<Huffman_Node*>* list)
     list->arrange();
     return list;
 }
-
-void Compressor::print(List<Huffman_Node *> list)
-{
-    Node<Huffman_Node*>* temp=list.getHead();
-    while(temp!= nullptr)
-    {
-        cout<<" = "<<to_string(temp->getValue()->getValue()->getTimes())<<endl;
-        temp=temp->getNext();
-    }
-}
-
 map<char,string> Compressor::codifier(Huffman_Tree tree,vector<Huffman_Node::Character> keys)
 {
     Codifier_Node *codifier= new Codifier_Node(keys.size(),"1");
-    Codifier_Node* cd=backTrackCoder(codifier,tree.getTop(), nullptr,"");
+    Codifier_Node* cd=backTrackCoder(codifier,tree.getTop(),"");
 
     return cd->getCodes();
 
 }
 
-Compressor::Codifier_Node* Compressor::backTrackCoder(Codifier_Node* cod, Huffman_Node* temp,Huffman_Node* alttemp,string code)
+Compressor::Codifier_Node* Compressor::backTrackCoder(Codifier_Node* cod, Huffman_Node* temp,string code)
 {
     if(cod->isDone())
     {
@@ -149,11 +138,11 @@ Compressor::Codifier_Node* Compressor::backTrackCoder(Codifier_Node* cod, Huffma
     }
     else
     {
-        Codifier_Node* ret=backTrackCoder(cod,temp->getRight(),temp,code+"1");
+        Codifier_Node* ret=backTrackCoder(cod,temp->getRight(),code+"1");
         if(ret->getDir()=="-1")
         {
             cod->setDir("0");
-            Codifier_Node* retleft=backTrackCoder(cod,temp->getLeft(),temp,code+"0");
+            Codifier_Node* retleft=backTrackCoder(cod,temp->getLeft(),code+"0");
             if(retleft->getDir()=="-1")
             {
                 retleft->setDir("-1");
@@ -170,22 +159,10 @@ Compressor::Codifier_Node* Compressor::backTrackCoder(Codifier_Node* cod, Huffma
         }
     }
 }
-void Compressor::print(vector<Compressor::Code> codes, vector<char> digits)
-{
-    /*for(int j=0;j<codes.size();j++)
-    {
-        cout<<codes.at(j).getCharacter()<<" : "<<codes.at(j).getCoded()<<"\n"<<endl;
-    }
-*/
-}
-
 string Compressor::encoder(map<char,string> codes, vector<char>keys)
 {
     string out="";
     int size=keys.size();
-    int csize=codes.size();
-    int cont=0;
-    int its=0;
     vector<Code>found;
     for(int i=0;i<size;i++)
     {
@@ -379,12 +356,6 @@ void Compressor::writeToDiskDecomp(Compressor::Decodified_File *DecFile)
     outfile.write(&DecFile->getDigits()[0], DecFile->getDigits().size());
     delete(DecFile);
 }
-
-string Compressor::getImage(Compressor::Decodified_File *pFile) {
-
-}
-
-
 
 
 

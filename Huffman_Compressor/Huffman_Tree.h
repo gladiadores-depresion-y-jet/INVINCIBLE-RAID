@@ -12,6 +12,9 @@ class Huffman_Tree
     private:
         Huffman_Node* Top;
     public:
+        /**
+         * Constructor de la clase Huffman_Tree
+         */
         Huffman_Tree();
         Huffman_Node* getTop();
         void setTop(Huffman_Node* h);

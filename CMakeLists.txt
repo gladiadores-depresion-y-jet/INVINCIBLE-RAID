@@ -33,8 +33,6 @@ add_executable(RAID_5
         RAID/RAID_Controller.h
         Structures/List.h
         Structures/Node.h
-        Structures/Matrix.cpp
-        Structures/Matrix.h
         RAID/FilePart.cpp
         RAID/FilePart.h
         Huffman_Compressor/Huffman_Tree.cpp
