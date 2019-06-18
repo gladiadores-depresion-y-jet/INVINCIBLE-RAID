@@ -726,3 +726,40 @@ string RAID_Controller::getImage(string id)
     cout<<"Done!"<<endl;
     return out;
 }
+
+void RAID_Controller::receiveImage(string name, string ImageS, string ext)
+{
+    std::vector<char> data(ImageS.begin(), ImageS.end());
+    ofstream outfile("Incoming/"+name+"."+ext, ios::out | ios::binary);
+    outfile.write(&data[0], data.size());
+    imageDecomposer("Incoming/"+name+"."+ext);
+    cout<<name<<" stored successfully!"<<endl;
+}
+
+void RAID_Controller::deleteImage(string name)
+{
+    for(int i=0;i<this->disks->size();i++)
+    {
+        Disk* current= this->disks->at("Disk_"+to_string(i+1));
+        map<string,FilePart*>* files= fileFetcher(current->getAdress());
+        for(map<string,FilePart*>::iterator it = files->begin(); it != files->end(); ++it)
+        {
+            if(it->second->getFileName().find(name)!= std::string::npos)
+            {
+                remove(it->second->getFilePath().c_str());
+            }
+        }
+
+
+    }
+    map<string,FilePart*>* trees=treesFetcher();
+    for(map<string,FilePart*>::iterator it = trees->begin(); it != trees->end(); ++it)
+    {
+        if(it->second->getFileName().find(name)!= std::string::npos)
+        {
+            remove(it->second->getFilePath().c_str());
+        }
+    }
+
+
+}

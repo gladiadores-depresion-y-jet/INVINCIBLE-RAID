@@ -25,8 +25,9 @@ HTTP_PROTOTYPE(requestHandler);
         std::string respuesta = "false";
         if (request.method() == Http::Method::Post) {
             if (request.resource() == "/INSERT") {
+                cout<<"Haciendo INSERT"<<endl;
                 datos = request.body();
-
+                std::cout << datos << std::endl;
                 auto jsonRequest = json::parse(datos);
                 std::string id = jsonRequest["id"];
                 std::string imagen = jsonRequest["imagen"];
@@ -41,7 +42,7 @@ HTTP_PROTOTYPE(requestHandler);
                 std::string temp = jsonRequest["imagen"];
                 std::string ID= jsonRequest["id"];
                 string ext=jsonRequest["ext"];
-                //raidController->receiveImage(ID,temp,ext);
+                raidController->receiveImage(ID,temp,ext);
                 respuesta = "true";
 
                 // TODO definir respuesta
@@ -53,7 +54,7 @@ HTTP_PROTOTYPE(requestHandler);
 
                 auto jsonRequest = json::parse(datos);
 
-
+                cout<<"Haciendo SELECT"<<endl;
                 std::string id = jsonRequest["id"];
                 std::string ext= jsonRequest["ext"];
                 string jsonImagen=raidController->getImage(id+"."+ext);

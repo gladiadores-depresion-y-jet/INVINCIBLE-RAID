@@ -103,6 +103,3 @@ CMakeFiles/RAID_5.dir/RAID/RAID_Controller.cpp.o: ../RAID/RAID_Controller.h
 CMakeFiles/RAID_5.dir/RAID/RAID_Controller.cpp.o: ../Structures/List.h
 CMakeFiles/RAID_5.dir/RAID/RAID_Controller.cpp.o: ../Structures/Node.h
 
-CMakeFiles/RAID_5.dir/Structures/Matrix.cpp.o: ../Structures/Matrix.cpp
-CMakeFiles/RAID_5.dir/Structures/Matrix.cpp.o: ../Structures/Matrix.h
-

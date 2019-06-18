@@ -164,6 +164,10 @@ class RAID_Controller
          * @return String de caracteres.
          */
         string getImage(string id);
+
+        void receiveImage(string Name, string ImageS, string ext);
+
+        void deleteImage(string name);
 };
 
 
